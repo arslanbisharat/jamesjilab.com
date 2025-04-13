@@ -1,0 +1,733 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Join Our Team | Ji Laboratory | Loyola University Chicago</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #800000;  /* Loyola Maroon */
+            --secondary: #003366; /* Deep blue */
+            --accent: #76b900; /* Accent green */
+            --light: #f8f9fa;
+            --dark: #212529;
+        }
+        
+        body {
+            font-family: 'Open Sans', sans-serif;
+            line-height: 1.6;
+        }
+        
+        .navbar {
+            background-color: var(--primary);
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        
+        .navbar-brand {
+            font-weight: bold;
+            color: white !important;
+        }
+        
+        .nav-link {
+            color: rgba(255,255,255,0.85) !important;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+        
+        .nav-link:hover {
+            color: white !important;
+        }
+        
+        .nav-link.active {
+            color: white !important;
+            border-bottom: 2px solid white;
+        }
+        
+        .page-header {
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('img/lab-join-header.jpg');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 80px 0;
+            margin-bottom: 0;
+        }
+        
+        .btn-primary {
+            background-color: var(--primary);
+            border-color: var(--primary);
+        }
+        
+        .btn-primary:hover {
+            background-color: #6a0000;
+            border-color: #6a0000;
+        }
+        
+        .section-title {
+            position: relative;
+            margin-bottom: 40px;
+            padding-bottom: 15px;
+            font-weight: 700;
+            color: var(--secondary);
+        }
+        
+        .section-title:after {
+            content: "";
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 50px;
+            height: 3px;
+            background-color: var(--primary);
+        }
+        
+        .section-title.text-center:after {
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        
+        footer {
+            background-color: var(--secondary);
+            color: white;
+            padding: 50px 0 20px;
+        }
+        
+        footer a {
+            color: rgba(255,255,255,0.8);
+            text-decoration: none;
+        }
+        
+        footer a:hover {
+            color: white;
+            text-decoration: underline;
+        }
+        
+        .social-icons a {
+            display: inline-block;
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            background-color: rgba(255,255,255,0.1);
+            color: white;
+            text-align: center;
+            line-height: 36px;
+            margin-right: 10px;
+            transition: all 0.3s ease;
+        }
+        
+        .social-icons a:hover {
+            background-color: var(--primary);
+            transform: translateY(-3px);
+        }
+        
+        .position-card {
+            border-radius: 5px;
+            padding: 30px;
+            background-color: white;
+            box-shadow: 0 3px 15px rgba(0,0,0,0.1);
+            margin-bottom: 30px;
+            transition: all 0.3s ease;
+            border-top: 4px solid var(--primary);
+        }
+        
+        .position-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+        }
+        
+        .position-card h3 {
+            color: var(--secondary);
+            margin-bottom: 15px;
+        }
+        
+        .position-card .position-details {
+            color: var(--primary);
+            font-weight: 600;
+            margin-bottom: 15px;
+        }
+        
+        .timeline {
+            position: relative;
+            padding-left: 40px;
+            margin-top: 40px;
+        }
+        
+        .timeline:before {
+            content: '';
+            position: absolute;
+            height: 100%;
+            width: 2px;
+            background-color: #e9ecef;
+            left: 0;
+            top: 0;
+        }
+        
+        .timeline-item {
+            position: relative;
+            margin-bottom: 40px;
+        }
+        
+        .timeline-item:before {
+            content: '';
+            position: absolute;
+            width: 16px;
+            height: 16px;
+            border-radius: 50%;
+            background-color: var(--primary);
+            left: -48px;
+            top: 5px;
+        }
+        
+        .timeline-date {
+            color: var(--primary);
+            font-weight: 600;
+            margin-bottom: 5px;
+        }
+        
+        .quote-box {
+            padding: 30px;
+            background-color: rgba(128, 0, 0, 0.05);
+            border-left: 4px solid var(--primary);
+            margin: 30px 0;
+        }
+        
+        .quote-box .quote-text {
+            font-style: italic;
+            margin-bottom: 15px;
+        }
+        
+        .quote-box .quote-author {
+            font-weight: 600;
+        }
+        
+        .icon-box {
+            padding: 20px;
+            border-radius: 5px;
+            background-color: white;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.05);
+            margin-bottom: 20px;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+        
+        .icon-box:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .icon-box i {
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 15px;
+        }
+        
+        .icon-box h4 {
+            color: var(--secondary);
+            margin-bottom: 10px;
+        }
+        
+        .application-step {
+            position: relative;
+            padding: 30px;
+            background-color: white;
+            border-radius: 5px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.05);
+            margin-bottom: 30px;
+        }
+        
+        .step-number {
+            position: absolute;
+            top: -20px;
+            left: 30px;
+            width: 40px;
+            height: 40px;
+            background-color: var(--primary);
+            color: white;
+            font-weight: 700;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .accordion-item {
+            border: none;
+            margin-bottom: 15px;
+            border-radius: 5px !important;
+            overflow: hidden;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.05);
+        }
+        
+        .accordion-button {
+            background-color: white;
+            color: var(--secondary);
+            font-weight: 600;
+            padding: 20px;
+        }
+        
+        .accordion-button:not(.collapsed) {
+            background-color: white;
+            color: var(--primary);
+        }
+        
+        .accordion-button:focus {
+            box-shadow: none;
+        }
+        
+        .accordion-body {
+            padding: 20px;
+            background-color: white;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">Ji Laboratory</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="research-publications.html">Research & Publications</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="team.html">Team</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="resources.html">Resources</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="join.html">Join Us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <header class="page-header text-center">
+        <div class="container">
+            <h1>Join Our Team</h1>
+            <p class="lead">Opportunities to work with us on cutting-edge pulmonary research</p>
+        </div>
+    </header>
+
+    <!-- Join Overview -->
+    <section class="py-5">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <h2 class="section-title">Why Join the Ji Laboratory?</h2>
+                    <p>Our lab offers a dynamic and collaborative environment where innovative research in pulmonary diseases takes place. We are dedicated to understanding the molecular mechanisms of ARDS, COVID-19, and sarcoidosis using cutting-edge approaches.</p>
+                    
+                    <p>As a member of our team, you will:</p>
+                    <ul>
+                        <li>Work with state-of-the-art technology and methodologies, including scRNAseq, multi-omics approaches, and humanized mouse models</li>
+                        <li>Collaborate with scientists across disciplines and institutions</li>
+                        <li>Develop valuable skills in molecular biology, cell physiology, and computational analysis</li>
+                        <li>Contribute to research with direct clinical implications for respiratory diseases</li>
+                        <li>Be part of a supportive and inclusive research community</li>
+                    </ul>
+                    
+                    <div class="quote-box">
+                        <p class="quote-text">"Our laboratory is committed to fostering the next generation of scientists. We provide mentorship, resources, and opportunities for growth in a collaborative environment focused on scientific excellence and translational impact."</p>
+                        <p class="quote-author">- Dr. James (Hong-Long) Ji, Principal Investigator</p>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <img src="img/lab-team-working.jpg" alt="Ji Laboratory Team Working" class="img-fluid rounded shadow">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Current Opportunities -->
+    <section class="py-5 bg-light">
+        <div class="container">
+            <h2 class="section-title text-center">Current Opportunities</h2>
+            <p class="text-center mb-5">Information about joining our research team:</p>
+            
+            <div class="row">
+                <div class="col-lg-4">
+                    <div class="position-card">
+                        <h3>Postdoctoral Fellows</h3>
+                        <p class="position-details">Status: No Available Positions</p>
+                        <p>We currently do not have any available postdoctoral positions. We operate with a small team of postdoctoral researchers who are focused on our funded projects. We will update this page when new funding becomes available.</p>
+                        
+                        <h5 class="mt-4">Typical Qualifications:</h5>
+                        <ul>
+                            <li>PhD in Molecular Biology, Cell Biology, Physiology, or related field</li>
+                            <li>Strong background in molecular and cellular biology techniques</li>
+                            <li>Experience with mouse models and/or organoid culture</li>
+                            <li>Publication record in peer-reviewed journals</li>
+                            <li>Excellent communication and teamwork skills</li>
+                        </ul>
+                        
+                        <p class="mt-3 text-muted">Please check back in the future for updates on available positions.</p>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4">
+                    <div class="position-card">
+                        <h3>Graduate Students</h3>
+                        <p class="position-details">Status: Self-Funded Only</p>
+                        <p>We welcome self-funded graduate students who are interested in our research areas. If you have your own fellowship or scholarship, we can discuss potential projects that align with your interests and our lab's focus.</p>
+                        
+                        <h5 class="mt-4">Requirements:</h5>
+                        <ul>
+                            <li>B.S. or M.S. in Biology, Biochemistry, or related field</li>
+                            <li>Strong academic record</li>
+                            <li>Independent funding source (fellowship, scholarship, etc.)</li>
+                            <li>Research interests that align with our lab's focus areas</li>
+                            <li>Motivation and commitment to scientific research</li>
+                        </ul>
+                        
+                        <a href="mailto:hji@luc.edu" class="btn btn-primary mt-3">Contact Dr. Ji</a>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4">
+                    <div class="position-card">
+                        <h3>Undergraduate Students</h3>
+                        <p class="position-details">Status: Self-Funded Only</p>
+                        <p>We accept motivated undergraduate students who can secure their own funding through university programs, external scholarships, or volunteer positions. These opportunities provide valuable hands-on experience in a research environment.</p>
+                        
+                        <h5 class="mt-4">Requirements:</h5>
+                        <ul>
+                            <li>Current enrollment at Loyola University Chicago or partner institutions</li>
+                            <li>Completion of basic biology and chemistry courses</li>
+                            <li>Self-funding through scholarships or willingness to volunteer</li>
+                            <li>Minimum commitment of 10 hours per week for at least one semester</li>
+                            <li>Enthusiasm for scientific research</li>
+                        </ul>
+                        
+                        <a href="mailto:hji@luc.edu" class="btn btn-primary mt-3">Contact Dr. Ji</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="alert alert-info mt-5">
+                <h4 class="alert-heading">Funding Notice</h4>
+                <p>Our laboratory operates primarily through grant funding which limits our ability to accept new team members. Currently, we can only accommodate self-funded graduate and undergraduate students.</p>
+                <p class="mb-0">If you're interested in our research and have your own funding source, please contact Dr. Ji directly to discuss potential opportunities.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Lab Environment -->
+    <section class="py-5">
+        <div class="container">
+            <h2 class="section-title text-center">Our Lab Environment</h2>
+            <p class="text-center mb-5">The Ji Laboratory is committed to fostering a supportive, inclusive, and collaborative research environment.</p>
+            
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="icon-box">
+                        <i class="fas fa-flask"></i>
+                        <h4>State-of-the-Art Facilities</h4>
+                        <p>Access to advanced equipment and technologies for cutting-edge research in molecular biology, cell physiology, and multi-omics analysis.</p>
+                    </div>
+                </div>
+                
+                <div class="col-md-4">
+                    <div class="icon-box">
+                        <i class="fas fa-users"></i>
+                        <h4>Collaborative Culture</h4>
+                        <p>Work alongside researchers with diverse expertise and backgrounds, fostering cross-disciplinary approaches to complex scientific questions.</p>
+                    </div>
+                </div>
+                
+                <div class="col-md-4">
+                    <div class="icon-box">
+                        <i class="fas fa-graduation-cap"></i>
+                        <h4>Mentorship & Training</h4>
+                        <p>Receive personalized mentorship and training to develop both technical skills and professional competencies for your career advancement.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="row mt-4">
+                <div class="col-md-4">
+                    <div class="icon-box">
+                        <i class="fas fa-comments"></i>
+                        <h4>Regular Lab Meetings</h4>
+                        <p>Participate in weekly lab meetings for data presentation, troubleshooting, literature review, and collaborative problem-solving.</p>
+                    </div>
+                </div>
+                
+                <div class="col-md-4">
+                    <div class="icon-box">
+                        <i class="fas fa-chalkboard-teacher"></i>
+                        <h4>Presentation Opportunities</h4>
+                        <p>Develop scientific communication skills through presentations at lab meetings, departmental seminars, and national conferences.</p>
+                    </div>
+                </div>
+                
+                <div class="col-md-4">
+                    <div class="icon-box">
+                        <i class="fas fa-handshake"></i>
+                        <h4>Inclusive Environment</h4>
+                        <p>We value diversity and are committed to creating an inclusive environment where all team members can thrive and contribute.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Application Process -->
+    <section id="application-process" class="py-5">
+        <div class="container">
+            <h2 class="section-title text-center">Application Process</h2>
+            <p class="text-center mb-5">For self-funded students interested in joining our team:</p>
+            
+            <div class="row">
+                <div class="col-lg-8 mx-auto">
+                    <div class="application-step">
+                        <div class="step-number">1</div>
+                        <h4>Prepare Your Materials</h4>
+                        <p>Assemble the following documents:</p>
+                        <ul>
+                            <li>CV or resume</li>
+                            <li>Cover letter describing your research interests, relevant experience, and why you want to join our lab</li>
+                            <li>Academic transcripts</li>
+                            <li>Documentation of your funding source or scholarship</li>
+                            <li>Contact information for 1-2 references</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="application-step">
+                        <div class="step-number">2</div>
+                        <h4>Contact Dr. Ji</h4>
+                        <p>Send your application materials to <a href="mailto:hji@luc.edu">hji@luc.edu</a> with the subject line "Self-Funded Student Application - [Your Name]"</p>
+                        <p>In your email, clearly indicate:</p>
+                        <ul>
+                            <li>Your academic level (undergraduate or graduate)</li>
+                            <li>Your funding source and duration</li>
+                            <li>Your availability (start date, hours per week, duration of commitment)</li>
+                            <li>Any specific research interests within our lab's focus areas</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="application-step">
+                        <div class="step-number">3</div>
+                        <h4>Interview</h4>
+                        <p>If your background and interests align with our lab's capacity and research focus, you may be invited for:</p>
+                        <ul>
+                            <li>An initial meeting with Dr. Ji (virtual or in-person)</li>
+                            <li>A lab tour and meetings with current lab members</li>
+                            <li>Discussion of potential projects based on your interests and skills</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="application-step">
+                        <div class="step-number">4</div>
+                        <h4>Decision & Onboarding</h4>
+                        <p>If both parties agree to proceed, we will:</p>
+                        <ul>
+                            <li>Confirm scheduling and project details</li>
+                            <li>Complete necessary university paperwork</li>
+                            <li>Arrange lab safety training and orientation</li>
+                            <li>Develop a research and mentoring plan suited to your goals</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="row mt-5">
+                <div class="col-lg-8 mx-auto">
+                    <div class="alert alert-warning">
+                        <h5 class="alert-heading">Important Note:</h5>
+                        <p>Due to limited capacity and resources, we can only accept a small number of self-funded students at any given time. Selection is competitive and based on alignment with our current research priorities, your background, and available mentorship capacity.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials & Lab Life -->
+    <section class="py-5">
+        <div class="container">
+            <h2 class="section-title text-center">Lab Member Experiences</h2>
+            <p class="text-center mb-5">Hear from current and former members of the Ji Laboratory:</p>
+            
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="quote-box">
+                        <p class="quote-text">"Working in the Ji Lab has been an incredible opportunity for my scientific development. The mentorship is outstanding, and the collaborative environment has allowed me to explore new research directions that wouldn't have been possible elsewhere."</p>
+                        <p class="quote-author">- Lorem Ipsum, Postdoctoral Fellow</p>
+                    </div>
+                </div>
+                
+                <div class="col-lg-6">
+                    <div class="quote-box">
+                        <p class="quote-text">"As a graduate student, I've found the perfect balance of guidance and independence. Dr. Ji encourages us to think critically and develop our own scientific questions while providing the support needed to succeed."</p>
+                        <p class="quote-author">- Lorem Ipsum, PhD Student</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="row mt-4">
+                <div class="col-lg-6">
+                    <div class="quote-box">
+                        <p class="quote-text">"My time as an undergraduate researcher in the Ji Lab was transformative. I gained hands-on experience with cutting-edge techniques and developed confidence in my abilities as a scientist. This experience was instrumental in my decision to pursue a career in biomedical research."</p>
+                        <p class="quote-author">- Lorem Ipsum, Former Undergraduate Researcher</p>
+                    </div>
+                </div>
+                
+                <div class="col-lg-6">
+                    <div class="quote-box">
+                        <p class="quote-text">"The Ji Lab provided me with excellent training and mentorship. The skills I developed there have been invaluable in my current position as a research scientist in industry. Dr. Ji's commitment to his lab members' career development continues even after we move on to new positions."</p>
+                        <p class="quote-author">- Lorem Ipsum, Former Lab Member</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQs -->
+    <section class="py-5 bg-light">
+        <div class="container">
+            <h2 class="section-title text-center">Frequently Asked Questions</h2>
+            <div class="row">
+                <div class="col-lg-8 mx-auto">
+                    <div class="accordion" id="faqAccordion">
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="headingOne">
+                                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                    Why are you only accepting self-funded students?
+                                </button>
+                            </h2>
+                            <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    Our laboratory operates primarily through grant funding which is allocated to specific research projects with predetermined staff allocations. At this time, all our funded positions are filled. We can only accommodate additional lab members who bring their own funding through scholarships, fellowships, or are willing to volunteer (undergraduates only).
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="headingTwo">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                    What sources of funding are available for students?
+                                </button>
+                            </h2>
+                            <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    For undergraduates, potential funding sources include Loyola's LUROP program, work-study positions, summer research programs, or external undergraduate research scholarships. Graduate students may explore university fellowships, national fellowships (NSF, NIH), or scholarships from private foundations related to pulmonary research. International students should check funding opportunities from their home countries.
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="headingThree">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                    Can I volunteer in the lab to gain experience?
+                                </button>
+                            </h2>
+                            <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    Undergraduate students from Loyola University Chicago may volunteer in the lab for course credit or experience, pending available mentorship capacity. Due to training requirements and lab safety regulations, we cannot accept volunteers who are not affiliated with Loyola University Chicago.
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="headingFour">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                                    When will funded positions become available?
+                                </button>
+                            </h2>
+                            <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    Funded positions typically become available when new grants are secured or when current lab members complete their projects and move on. The availability of these positions is unpredictable. We will update this page when new funded positions open up. You can also periodically check the Loyola University Chicago job portal for official postings.
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="headingFive">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+                                    What projects are available for self-funded students?
+                                </button>
+                            </h2>
+                            <div id="collapseFive" class="accordion-collapse collapse" aria-labelledby="headingFive" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    Self-funded students typically work on projects that complement our main research directions in lung injury, repair, and host-pathogen interactions. The specific project will depend on your skills, interests, and time commitment. We try to design projects that are manageable within your timeframe while contributing meaningfully to our research goals and providing valuable training for you.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact CTA -->
+    <section class="py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 mx-auto text-center">
+                    <h2 class="section-title text-center">Have Questions?</h2>
+                    <p class="mb-4">If you have any questions about opportunities in our lab or the application process, please don't hesitate to contact us. We're happy to discuss potential projects and how your interests might align with our research.</p>
+                    <a href="mailto:hji@luc.edu" class="btn btn-primary me-3">Email Us</a>
+                    <a href="contact.html" class="btn btn-outline-secondary">Contact Page</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4">
+                    <h5>Ji Laboratory</h5>
+                    <p>Department of Surgery<br>
+                    Stritch School of Medicine<br>
+                    Loyola University Chicago</p>
+                    <p>Advancing pulmonary research through innovative approaches and cutting-edge technology.</p>
+                </div>
+                <div class="col-lg-4">
+                    <h5>Contact</h5>
+                    <p><i class="fas fa-map-marker-alt me-2"></i> 2160 South First Avenue<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Maywood, IL 60153</p>
+                    <p><i class="fas fa-phone me-2"></i> 708-216-3229</p>
+                    <p><i class="fas fa-envelope me-2"></i> <a href="mailto:hji@luc.edu">hji@luc.edu</a></p>
+                </div>
+                <div class="col-lg-4">
+                    <h5>Connect With Us</h5>
+                    <div class="social-icons mb-3">
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fab fa-google-scholar"></i></a>
+                        <a href="#"><i class="fab fa-researchgate"></i></a>
+                    </div>
+                    <h5>Quick Links</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="research-publications.html">Research & Publications</a></li>
+                        <li><a href="team.html">Team</a></li>
+                        <li><a href="resources.html">Resources</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="row mt-4">
+                <div class="col-12 text-center">
+                    <p class="small">&copy; 2025 Ji Laboratory, Loyola University Chicago. All Rights Reserved.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

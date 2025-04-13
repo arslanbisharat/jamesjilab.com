@@ -1,0 +1,821 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Team | Ji Laboratory | Loyola University Chicago</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #800000;  /* Loyola Maroon */
+            --secondary: #003366; /* Deep blue */
+            --accent: #76b900; /* Accent green */
+            --light: #f8f9fa;
+            --dark: #212529;
+        }
+        
+        body {
+            font-family: 'Open Sans', sans-serif;
+            line-height: 1.6;
+        }
+        
+        .navbar {
+            background-color: var(--primary);
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        
+        .navbar-brand {
+            font-weight: bold;
+            color: white !important;
+        }
+        
+        .nav-link {
+            color: rgba(255,255,255,0.85) !important;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+        
+        .nav-link:hover {
+            color: white !important;
+        }
+        
+        .nav-link.active {
+            color: white !important;
+            border-bottom: 2px solid white;
+        }
+        
+        .page-header {
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('img/lab-team-header.jpg');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 80px 0;
+            margin-bottom: 0;
+        }
+        
+        .btn-primary {
+            background-color: var(--primary);
+            border-color: var(--primary);
+        }
+        
+        .btn-primary:hover {
+            background-color: #6a0000;
+            border-color: #6a0000;
+        }
+        
+        .section-title {
+            position: relative;
+            margin-bottom: 40px;
+            padding-bottom: 15px;
+            font-weight: 700;
+            color: var(--secondary);
+        }
+        
+        .section-title:after {
+            content: "";
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 50px;
+            height: 3px;
+            background-color: var(--primary);
+        }
+        
+        .section-title.text-center:after {
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        
+        footer {
+            background-color: var(--secondary);
+            color: white;
+            padding: 50px 0 20px;
+        }
+        
+        footer a {
+            color: rgba(255,255,255,0.8);
+            text-decoration: none;
+        }
+        
+        footer a:hover {
+            color: white;
+            text-decoration: underline;
+        }
+        
+        .social-icons a {
+            display: inline-block;
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            background-color: rgba(255,255,255,0.1);
+            color: white;
+            text-align: center;
+            line-height: 36px;
+            margin-right: 10px;
+            transition: all 0.3s ease;
+        }
+        
+        .social-icons a:hover {
+            background-color: var(--primary);
+            transform: translateY(-3px);
+        }
+        
+        .team-member {
+            margin-bottom: 50px;
+        }
+        
+        .team-img {
+            position: relative;
+            overflow: hidden;
+            border-radius: 5px;
+            margin-bottom: 20px;
+        }
+        
+        .team-img img {
+            width: 100%;
+            transition: all 0.5s ease;
+        }
+        
+        .team-img:hover img {
+            transform: scale(1.05);
+        }
+        
+        .team-info {
+            text-align: center;
+        }
+        
+        .team-info h4 {
+            margin-bottom: 5px;
+            color: var(--secondary);
+        }
+        
+        .team-title {
+            color: var(--primary);
+            font-weight: 600;
+            margin-bottom: 15px;
+        }
+        
+        .team-bio {
+            margin-bottom: 15px;
+        }
+        
+        .team-social a {
+            display: inline-block;
+            width: 32px;
+            height: 32px;
+            background-color: #f5f5f5;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 32px;
+            margin: 0 5px;
+            color: var(--secondary);
+            transition: all 0.3s ease;
+        }
+        
+        .team-social a:hover {
+            background-color: var(--primary);
+            color: white;
+        }
+        
+        .principal-investigator {
+            margin-bottom: 70px;
+        }
+        
+        .pi-img {
+            border-radius: 5px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .pi-info h3 {
+            color: var(--secondary);
+            margin-bottom: 10px;
+        }
+        
+        .pi-title {
+            color: var(--primary);
+            font-weight: 600;
+            margin-bottom: 20px;
+        }
+        
+        .pi-bio {
+            margin-bottom: 20px;
+        }
+        
+        .team-category {
+            margin-bottom: 50px;
+        }
+        
+        .team-category-title {
+            font-weight: 700;
+            color: var(--secondary);
+            padding-bottom: 10px;
+            border-bottom: 1px solid #eee;
+            margin-bottom: 30px;
+        }
+        
+        .alumni-item {
+            padding: 15px;
+            border-left: 3px solid var(--primary);
+            margin-bottom: 15px;
+            transition: all 0.3s ease;
+            background-color: white;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+        }
+        
+        .alumni-item:hover {
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+            transform: translateY(-3px);
+        }
+        
+        .alumni-name {
+            font-weight: 600;
+            color: var(--secondary);
+            margin-bottom: 5px;
+        }
+        
+        .alumni-position {
+            color: var(--primary);
+            font-style: italic;
+            margin-bottom: 5px;
+        }
+        
+        .alumni-years {
+            font-size: 0.9rem;
+            color: #6c757d;
+        }
+        
+        .join-box {
+            padding: 30px;
+            border-radius: 5px;
+            background-color: #f8f9fa;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            margin-bottom: 30px;
+        }
+        
+        .join-box h4 {
+            color: var(--secondary);
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">Ji Laboratory</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="research.html">Research & Publications</a>
+                    </li>
+                    
+                    <li class="nav-item">
+                        <a class="nav-link active" href="team.html">Team</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="resources.html">Resources</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <header class="page-header text-center">
+        <div class="container">
+            <h1>Our Team</h1>
+            <p class="lead">Meet the talented researchers and staff of the Ji Laboratory</p>
+        </div>
+    </header>
+
+    <!-- Principal Investigator -->
+    <section class="py-5">
+        <div class="container">
+            <h2 class="section-title">Leadership</h2>
+            
+            <div class="row principal-investigator">
+                <div class="col-lg-4">
+                    <div class="pi-img">
+                        <img src="img/dr-ji-portrait.jpg" alt="Dr. James (Hong-Long) Ji" class="img-fluid">
+                    </div>
+                </div>
+                <div class="col-lg-8 pi-info">
+                    <h3>James (Hong-Long) Ji, MD, PhD</h3>
+                    <p class="pi-title">Professor of Surgery | Principal Investigator</p>
+                    <p class="pi-bio">Dr. Ji leads a multidisciplinary research team focused on understanding the molecular mechanisms of pulmonary diseases, with particular emphasis on acute respiratory distress syndrome (ARDS), COVID-19, and sarcoidosis. His research employs cutting-edge approaches including multi-omics analysis, humanized mouse models, and iPSC-derived organoids to identify new therapeutic targets and biomarkers.</p>
+                    <p class="pi-bio">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam in dui mauris. Vivamus hendrerit arcu sed erat molestie vehicula. Sed auctor neque eu tellus rhoncus ut eleifend nibh porttitor. Ut in nulla enim. Phasellus molestie magna non est bibendum non venenatis nisl tempor. Suspendisse dictum feugiat nisl ut dapibus. Mauris iaculis porttitor posuere. Praesent id metus massa, ut blandit odio. Proin quis tortor orci. Etiam at risus et justo dignissim congue. Donec congue lacinia dui, a porttitor lectus condimentum laoreet.</p>
+                    <div class="mb-4">
+                        <p><strong>Education:</strong></p>
+                        <ul>
+                            <li>MD, Xinxiang Medical University</li>
+                            <li>PhD, Molecular Medicine</li>
+                            <li>Postdoctoral Fellowship, Pulmonary Physiology</li>
+                        </ul>
+                    </div>
+                    <div class="mb-4">
+                        <p><strong>Research Interests:</strong></p>
+                        <ul>
+                            <li>Lung injury and repair mechanisms</li>
+                            <li>Epithelial sodium channels (ENaC) in pulmonary edema</li>
+                            <li>Surfactant protein regulation of alveolar epithelial cell fate</li>
+                            <li>Host-pathogen interactions in respiratory diseases</li>
+                            <li>Multi-omics approaches to biomarker discovery</li>
+                        </ul>
+                    </div>
+                    <div class="mb-4">
+                        <p><strong>Hobbies:</strong> Gardening, Hiking, Travel, Photography, Exercise</p>
+                    </div>
+                    <div class="team-social">
+                        <a href="mailto:hji@luc.edu" title="Email"><i class="fas fa-envelope"></i></a>
+                        <a href="https://scholar.google.com/" target="_blank" title="Google Scholar"><i class="fas fa-graduation-cap"></i></a>
+                        <a href="https://www.researchgate.net/" target="_blank" title="ResearchGate"><i class="fab fa-researchgate"></i></a>
+                        <a href="https://www.linkedin.com/in/hong-long-ji/" target="_blank" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="https://orcid.org/0000-0002-xxxx-xxxx" target="_blank" title="ORCID"><i class="fab fa-orcid"></i></a>
+                        <a href="https://loop.frontiersin.org/" target="_blank" title="Loop"><i class="fas fa-book"></i></a>
+                        <a href="https://www.ncbi.nlm.nih.gov/myncbi/" target="_blank" title="NCBI Bibliography"><i class="fas fa-dna"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Post-Doctoral Fellows -->
+    <section class="py-5 bg-light">
+        <div class="container">
+            <h2 class="section-title text-center">Research Team</h2>
+            
+            <div class="team-category">
+                <h3 class="team-category-title">Post-Doctoral Fellows</h3>
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="team-member">
+                            <div class="team-img">
+                                <img src="img/postdoc1.jpg" alt="Lorem Ipsum" class="img-fluid">
+                            </div>
+                            <div class="team-info">
+                                <h4>Lorem Ipsum</h4>
+                                <p class="team-title">Senior Post-Doctoral Fellow</p>
+                                <p class="team-bio">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque velit nisi, pretium ut lacinia in, elementum id enim. Nulla porttitor accumsan tincidunt. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae.</p>
+                                <p><strong>Education:</strong> Lorem ipsum dolor sit amet</p>
+                                <div class="team-social">
+                                    <a href="mailto:lorem@luc.edu" title="Email"><i class="fas fa-envelope"></i></a>
+                                    <a href="#" target="_blank" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                                    <a href="#" target="_blank" title="Google Scholar"><i class="fas fa-graduation-cap"></i></a>
+                                    <a href="#" target="_blank" title="Personal Website"><i class="fas fa-globe"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-md-4">
+                        <div class="team-member">
+                            <div class="team-img">
+                                <img src="img/postdoc2.jpg" alt="Lorem Ipsum" class="img-fluid">
+                            </div>
+                            <div class="team-info">
+                                <h4>Lorem Ipsum</h4>
+                                <p class="team-title">Post-Doctoral Fellow</p>
+                                <p class="team-bio">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur non nulla sit amet nisl tempus convallis quis ac lectus. Donec rutrum congue leo eget malesuada. Sed porttitor lectus nibh. Proin eget tortor risus.</p>
+                                <p><strong>Education:</strong> Lorem ipsum dolor sit amet</p>
+                                <div class="team-social">
+                                    <a href="mailto:lorem@luc.edu" title="Email"><i class="fas fa-envelope"></i></a>
+                                    <a href="#" target="_blank" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                                    <a href="#" target="_blank" title="Google Scholar"><i class="fas fa-graduation-cap"></i></a>
+                                    <a href="#" target="_blank" title="ORCID"><i class="fab fa-orcid"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-md-4">
+                        <div class="team-member">
+                            <div class="team-img">
+                                <img src="img/postdoc3.jpg" alt="Lorem Ipsum" class="img-fluid">
+                            </div>
+                            <div class="team-info">
+                                <h4>Lorem Ipsum</h4>
+                                <p class="team-title">Post-Doctoral Fellow</p>
+                                <p class="team-bio">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus magna justo, lacinia eget consectetur sed, convallis at tellus. Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem. Donec sollicitudin molestie malesuada.</p>
+                                <p><strong>Education:</strong> Lorem ipsum dolor sit amet</p>
+                                <div class="team-social">
+                                    <a href="mailto:lorem@luc.edu" title="Email"><i class="fas fa-envelope"></i></a>
+                                    <a href="#" target="_blank" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                                    <a href="#" target="_blank" title="Google Scholar"><i class="fas fa-graduation-cap"></i></a>
+                                    <a href="#" target="_blank" title="ResearchGate"><i class="fab fa-researchgate"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Graduate Students -->
+            <div class="team-category">
+                <h3 class="team-category-title">Graduate Students</h3>
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="team-member">
+                            <div class="team-img">
+                                <img src="img/gradstudent1.jpg" alt="Lorem Ipsum" class="img-fluid">
+                            </div>
+                            <div class="team-info">
+                                <h4>Lorem Ipsum</h4>
+                                <p class="team-title">PhD Candidate</p>
+                                <p class="team-bio">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin eget tortor risus. Cras ultricies ligula sed magna dictum porta. Vestibulum ac diam sit amet quam vehicula elementum sed sit amet dui.</p>
+                                <p><strong>Education:</strong> Lorem ipsum dolor sit amet</p>
+                                <div class="team-social">
+                                    <a href="mailto:lorem@luc.edu" title="Email"><i class="fas fa-envelope"></i></a>
+                                    <a href="#" target="_blank" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                                    <a href="#" target="_blank" title="Google Scholar"><i class="fas fa-graduation-cap"></i></a>
+                                    <a href="#" target="_blank" title="Twitter"><i class="fab fa-twitter"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-md-4">
+                        <div class="team-member">
+                            <div class="team-img">
+                                <img src="img/gradstudent2.jpg" alt="Lorem Ipsum" class="img-fluid">
+                            </div>
+                            <div class="team-info">
+                                <h4>Lorem Ipsum</h4>
+                                <p class="team-title">PhD Student</p>
+                                <p class="team-bio">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur non nulla sit amet nisl tempus convallis quis ac lectus. Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a.</p>
+                                <p><strong>Education:</strong> Lorem ipsum dolor sit amet</p>
+                                <div class="team-social">
+                                    <a href="mailto:lorem@luc.edu" title="Email"><i class="fas fa-envelope"></i></a>
+                                    <a href="#" target="_blank" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                                    <a href="#" target="_blank" title="ORCID"><i class="fab fa-orcid"></i></a>
+                                    <a href="#" target="_blank" title="Personal Website"><i class="fas fa-globe"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-md-4">
+                        <div class="team-member">
+                            <div class="team-img">
+                                <img src="img/gradstudent3.jpg" alt="Lorem Ipsum" class="img-fluid">
+                            </div>
+                            <div class="team-info">
+                                <h4>Lorem Ipsum</h4>
+                                <p class="team-title">PhD Student</p>
+                                <p class="team-bio">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque in ipsum id orci porta dapibus. Quisque velit nisi, pretium ut lacinia in, elementum id enim. Donec rutrum congue leo eget malesuada.</p>
+                                <p><strong>Education:</strong> Lorem ipsum dolor sit amet</p>
+                                <div class="team-social">
+                                    <a href="mailto:lorem@luc.edu" title="Email"><i class="fas fa-envelope"></i></a>
+                                    <a href="#" target="_blank" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                                    <a href="#" target="_blank" title="Google Scholar"><i class="fas fa-graduation-cap"></i></a>
+                                    <a href="#" target="_blank" title="ResearchGate"><i class="fab fa-researchgate"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Undergraduate Students -->
+            <div class="team-category">
+                <h3 class="team-category-title">Undergraduate Students</h3>
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="team-member">
+                            <div class="team-img">
+                                <img src="img/undergrad1.jpg" alt="Lorem Ipsum" class="img-fluid">
+                            </div>
+                            <div class="team-info">
+                                <h4>Lorem Ipsum</h4>
+                                <p class="team-title">Undergraduate Researcher</p>
+                                <p class="team-bio">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eu turpis molestie, dictum est a, mattis tellus. Sed dignissim, metus nec fringilla accumsan, risus sem sollicitudin lacus, ut interdum tellus elit sed risus.</p>
+                                <p><strong>Education:</strong> Lorem ipsum dolor sit amet</p>
+                                <div class="team-social">
+                                    <a href="mailto:lorem@luc.edu" title="Email"><i class="fas fa-envelope"></i></a>
+                                    <a href="#" target="_blank" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-md-4">
+                        <div class="team-member">
+                            <div class="team-img">
+                                <img src="img/undergrad2.jpg" alt="Lorem Ipsum" class="img-fluid">
+                            </div>
+                            <div class="team-info">
+                                <h4>Lorem Ipsum</h4>
+                                <p class="team-title">Undergraduate Researcher</p>
+                                <p class="team-bio">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent mauris augue, consequat id tincidunt in, dictum id neque. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</p>
+                                <p><strong>Education:</strong> Lorem ipsum dolor sit amet</p>
+                                <div class="team-social">
+                                    <a href="mailto:lorem@luc.edu" title="Email"><i class="fas fa-envelope"></i></a>
+                                    <a href="#" target="_blank" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-md-4">
+                        <div class="team-member">
+                            <div class="team-img">
+                                <img src="img/undergrad3.jpg" alt="Lorem Ipsum" class="img-fluid">
+                            </div>
+                            <div class="team-info">
+                                <h4>Lorem Ipsum</h4>
+                                <p class="team-title">Undergraduate Researcher</p>
+                                <p class="team-bio">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eu turpis molestie, dictum est a, mattis tellus. Sed dignissim, metus nec fringilla accumsan, risus sem sollicitudin lacus, ut interdum tellus elit sed risus.</p>
+                                <p><strong>Education:</strong> Lorem ipsum dolor sit amet</p>
+                                <div class="team-social">
+                                    <a href="mailto:lorem@luc.edu" title="Email"><i class="fas fa-envelope"></i></a>
+                                    <a href="#" target="_blank" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Administrative Staff -->
+            <div class="team-category">
+                <h3 class="team-category-title">Administrative Staff</h3>
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="team-member">
+                            <div class="team-img">
+                                <img src="img/staff1.jpg" alt="Lorem Ipsum" class="img-fluid">
+                            </div>
+                            <div class="team-info">
+                                <h4>Lorem Ipsum</h4>
+                                <p class="team-title">Administrative Assistant</p>
+                                <p class="team-bio">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla quis lorem ut libero malesuada feugiat. Donec rutrum congue leo eget malesuada. Curabitur aliquet quam id dui posuere blandit.</p>
+                                <p><strong>Education:</strong> Lorem ipsum dolor sit amet</p>
+                                <div class="team-social">
+                                    <a href="mailto:lorem@luc.edu" title="Email"><i class="fas fa-envelope"></i></a>
+                                    <a href="#" target="_blank" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-md-4">
+                        <div class="team-member">
+                            <div class="team-img">
+                                <img src="img/staff2.jpg" alt="Lorem Ipsum" class="img-fluid">
+                            </div>
+                            <div class="team-info">
+                                <h4>Lorem Ipsum</h4>
+                                <p class="team-title">Grant Coordinator</p>
+                                <p class="team-bio">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent sapien massa, convallis a pellentesque nec, egestas non nisi. Vivamus suscipit tortor eget felis porttitor volutpat.</p>
+                                <p><strong>Education:</strong> Lorem ipsum dolor sit amet</p>
+                                <div class="team-social">
+                                    <a href="mailto:lorem@luc.edu" title="Email"><i class="fas fa-envelope"></i></a>
+                                    <a href="#" target="_blank" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-md-4">
+                        <div class="team-member">
+                            <div class="team-img">
+                                <img src="img/staff3.jpg" alt="Lorem Ipsum" class="img-fluid">
+                            </div>
+                            <div class="team-info">
+                                <h4>Lorem Ipsum</h4>
+                                <p class="team-title">Administrative Coordinator</p>
+                                <p class="team-bio">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur non nulla sit amet nisl tempus convallis quis ac lectus. Quisque velit nisi, pretium ut lacinia in, elementum id enim.</p>
+                                <p><strong>Education:</strong> Lorem ipsum dolor sit amet</p>
+                                <div class="team-social">
+                                    <a href="mailto:lorem@luc.edu" title="Email"><i class="fas fa-envelope"></i></a>
+                                    <a href="#" target="_blank" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Lab Alumni -->
+    <section class="py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8">
+                    <h2 class="section-title">Lab Alumni</h2>
+                    
+                    <div class="alumni-item">
+                        <h5 class="alumni-name">Lorem Ipsum</h5>
+                        <p class="alumni-position">Post-Doctoral Fellow</p>
+                        <p class="alumni-years">2020 - 2023</p>
+                        <p>Currently Assistant Professor at Lorem Ipsum University</p>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla quis lorem ut libero malesuada feugiat. Donec rutrum congue leo eget malesuada. Cras ultricies ligula sed magna dictum porta. Curabitur aliquet quam id dui posuere blandit.</p>
+                        <div class="mt-2">
+                            <a href="mailto:lorem@ipsum.edu" class="btn btn-sm btn-outline-secondary me-2" title="Email">
+                                <i class="fas fa-envelope me-1"></i> Email
+                            </a>
+                            <a href="#" class="btn btn-sm btn-outline-secondary me-2" target="_blank" title="LinkedIn">
+                                <i class="fab fa-linkedin-in me-1"></i> LinkedIn
+                            </a>
+                            <a href="#" class="btn btn-sm btn-outline-secondary" target="_blank" title="Faculty Profile">
+                                <i class="fas fa-university me-1"></i> Faculty Profile
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <div class="alumni-item">
+                        <h5 class="alumni-name">Lorem Ipsum</h5>
+                        <p class="alumni-position">Post-Doctoral Fellow</p>
+                        <p class="alumni-years">2019 - 2023</p>
+                        <p>Currently Senior Scientist at Lorem Ipsum Laboratories</p>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec sollicitudin molestie malesuada. Nulla quis lorem ut libero malesuada feugiat. Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem. Sed porttitor lectus nibh.</p>
+                        <div class="mt-2">
+                            <a href="mailto:lorem@ipsum.com" class="btn btn-sm btn-outline-secondary me-2" title="Email">
+                                <i class="fas fa-envelope me-1"></i> Email
+                            </a>
+                            <a href="#" class="btn btn-sm btn-outline-secondary me-2" target="_blank" title="LinkedIn">
+                                <i class="fab fa-linkedin-in me-1"></i> LinkedIn
+                            </a>
+                            <a href="#" class="btn btn-sm btn-outline-secondary" target="_blank" title="Google Scholar">
+                                <i class="fas fa-graduation-cap me-1"></i> Google Scholar
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <div class="alumni-item">
+                        <h5 class="alumni-name">Lorem Ipsum</h5>
+                        <p class="alumni-position">PhD Student</p>
+                        <p class="alumni-years">2018 - 2023</p>
+                        <p>Currently Post-Doctoral Researcher at Lorem Ipsum Medical School</p>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a. Vivamus magna justo, lacinia eget consectetur sed, convallis at tellus. Praesent sapien massa, convallis a pellentesque nec.</p>
+                        <div class="mt-2">
+                            <a href="mailto:lorem@ipsum.edu" class="btn btn-sm btn-outline-secondary me-2" title="Email">
+                                <i class="fas fa-envelope me-1"></i> Email
+                            </a>
+                            <a href="#" class="btn btn-sm btn-outline-secondary me-2" target="_blank" title="LinkedIn">
+                                <i class="fab fa-linkedin-in me-1"></i> LinkedIn
+                            </a>
+                            <a href="#" class="btn btn-sm btn-outline-secondary" target="_blank" title="Google Scholar">
+                                <i class="fas fa-graduation-cap me-1"></i> Google Scholar
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <div class="alumni-item">
+                        <h5 class="alumni-name">Lorem Ipsum</h5>
+                        <p class="alumni-position">PhD Student</p>
+                        <p class="alumni-years">2017 - 2022</p>
+                        <p>Currently Research Scientist at Lorem Ipsum Institute</p>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin eget tortor risus. Quisque velit nisi, pretium ut lacinia in, elementum id enim. Nulla quis lorem ut libero malesuada feugiat. Vestibulum ante ipsum primis in faucibus orci.</p>
+                        <div class="mt-2">
+                            <a href="mailto:lorem@ipsum.gov" class="btn btn-sm btn-outline-secondary me-2" title="Email">
+                                <i class="fas fa-envelope me-1"></i> Email
+                            </a>
+                            <a href="#" class="btn btn-sm btn-outline-secondary me-2" target="_blank" title="LinkedIn">
+                                <i class="fab fa-linkedin-in me-1"></i> LinkedIn
+                            </a>
+                            <a href="#" class="btn btn-sm btn-outline-secondary" target="_blank" title="ResearchGate">
+                                <i class="fab fa-researchgate me-1"></i> ResearchGate
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <div class="alumni-item">
+                        <h5 class="alumni-name">Lorem Ipsum</h5>
+                        <p class="alumni-position">Post-Doctoral Fellow</p>
+                        <p class="alumni-years">2016 - 2021</p>
+                        <p>Currently Research Assistant Professor at Lorem Ipsum University</p>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus magna justo, lacinia eget consectetur sed, convallis at tellus. Donec rutrum congue leo eget malesuada. Donec sollicitudin molestie malesuada. Nulla quis lorem ut libero malesuada feugiat.</p>
+                        <div class="mt-2">
+                            <a href="mailto:lorem@ipsum.edu" class="btn btn-sm btn-outline-secondary me-2" title="Email">
+                                <i class="fas fa-envelope me-1"></i> Email
+                            </a>
+                            <a href="#" class="btn btn-sm btn-outline-secondary me-2" target="_blank" title="LinkedIn">
+                                <i class="fab fa-linkedin-in me-1"></i> LinkedIn
+                            </a>
+                            <a href="#" class="btn btn-sm btn-outline-secondary" target="_blank" title="Faculty Profile">
+                                <i class="fas fa-university me-1"></i> Faculty Profile
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-4 text-center">
+                        <a href="#" class="btn btn-outline-primary">View All Alumni</a>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4">
+                    <div class="join-box">
+                        <h4>Join Our Team</h4>
+                        <p>We are always looking for talented and motivated individuals to join our research team. We currently have openings for:</p>
+                        <ul>
+                            <li>Post-Doctoral Fellows</li>
+                            <li>Graduate Students</li>
+                            <li>Undergraduate Research Assistants</li>
+                            <li>Research Technicians</li>
+                        </ul>
+                        <p>If you are interested in joining our lab, please send your CV and a brief statement of research interests to:</p>
+                        <p><a href="mailto:hji@luc.edu">hji@luc.edu</a></p>
+                        <a href="join.html" class="btn btn-primary mt-3">Learn More</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Collaborators -->
+    <section class="py-5 bg-light">
+        <div class="container">
+            <h2 class="section-title text-center">Collaborators</h2>
+            <p class="text-center mb-5">Our research benefits from collaborations with leading scientists and clinicians from across the world.</p>
+            
+            <div class="row">
+                <div class="col-md-4 text-center mb-4">
+                    <h5>Clinical Partners</h5>
+                    <ul class="list-unstyled">
+                        <li>Department of Surgery, Loyola University Chicago</li>
+                        <li>Burn and Shock Trauma Research Institute</li>
+                        <li>Loyola University Medical Center</li>
+                        <li>Department of Medicine, Division of Pulmonary and Critical Care</li>
+                    </ul>
+                </div>
+                
+                <div class="col-md-4 text-center mb-4">
+                    <h5>Academic Collaborators</h5>
+                    <ul class="list-unstyled">
+                        <li>Northwestern University</li>
+                        <li>University of Chicago</li>
+                        <li>University of Texas</li>
+                        <li>National Institutes of Health</li>
+                        <li>Harvard Medical School</li>
+                    </ul>
+                </div>
+                
+                <div class="col-md-4 text-center mb-4">
+                    <h5>Industry Partners</h5>
+                    <ul class="list-unstyled">
+                        <li>Pharmaceutical Research Labs</li>
+                        <li>Biotechnology Companies</li>
+                        <li>Medical Device Manufacturers</li>
+                        <li>Computational Biology Firms</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4">
+                    <h5>Ji Laboratory</h5>
+                    <p>Department of Surgery<br>
+                    Stritch School of Medicine<br>
+                    Loyola University Chicago</p>
+                    <p>Advancing pulmonary research through innovative approaches and cutting-edge technology.</p>
+                </div>
+                <div class="col-lg-4">
+                    <h5>Contact</h5>
+                    <p><i class="fas fa-map-marker-alt me-2"></i> 2160 South First Avenue<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Maywood, IL 60153</p>
+                    <p><i class="fas fa-phone me-2"></i> 708-216-3229</p>
+                    <p><i class="fas fa-envelope me-2"></i> <a href="mailto:hji@luc.edu">hji@luc.edu</a></p>
+                </div>
+                <div class="col-lg-4">
+                    <h5>Connect With Us</h5>
+                    <div class="social-icons mb-3">
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fab fa-google-scholar"></i></a>
+                        <a href="#"><i class="fab fa-researchgate"></i></a>
+                    </div>
+                    <h5>Quick Links</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="research.html">Research</a></li>
+                        <li><a href="team.html">Team</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="row mt-4">
+                <div class="col-12 text-center">
+                    <p class="small">&copy; 2025 Ji Laboratory, Loyola University Chicago. All Rights Reserved.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
