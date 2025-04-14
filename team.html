@@ -130,10 +130,18 @@
             overflow: hidden;
             border-radius: 5px;
             margin-bottom: 20px;
+            height: 300px; /* Fixed height for consistent team image containers */
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
         
         .team-img img {
-            width: 100%;
+            max-width: 100%;
+            max-height: 300px; /* Maximum height */
+            width: auto;
+            height: auto;
+            object-fit: contain; /* Maintain aspect ratio without cropping */
             transition: all 0.5s ease;
         }
         
@@ -186,6 +194,18 @@
             border-radius: 5px;
             overflow: hidden;
             box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            height: 400px; /* Height for PI image container */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .pi-img img {
+            max-width: 100%;
+            max-height: 400px;
+            width: auto;
+            height: auto;
+            object-fit: contain;
         }
         
         .pi-info h3 {
@@ -348,77 +368,13 @@
         </div>
     </section>
 
-    <!-- Post-Doctoral Fellows
+    <!-- Post-Doctoral Fellows commented out section kept as is -->
+    
+    <!-- Graduate Students & Medical Students -->
     <section class="py-5 bg-light">
         <div class="container">
             <h2 class="section-title text-center">Research Team</h2>
             
-            <div class="team-category">
-                <h3 class="team-category-title">Post-Doctoral Fellows</h3>
-                <div class="row">
-                    <div class="col-md-4">
-                        <div class="team-member">
-                            <div class="team-img">
-                                <img src="people-img/postdoc1.jpg" alt="Lorem Ipsum" class="img-fluid">
-                            </div>
-                            <div class="team-info">
-                                <h4>Lorem Ipsum</h4>
-                                <p class="team-title">Senior Post-Doctoral Fellow</p>
-                                <p class="team-bio">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque velit nisi, pretium ut lacinia in, elementum id enim. Nulla porttitor accumsan tincidunt. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae.</p>
-                                <p><strong>Education:</strong> Lorem ipsum dolor sit amet</p>
-                                <div class="team-social">
-                                    <a href="mailto:lorem@luc.edu" title="Email"><i class="fas fa-envelope"></i></a>
-                                    <a href="#" target="_blank" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-                                    <a href="#" target="_blank" title="Google Scholar"><i class="fas fa-graduation-cap"></i></a>
-                                    <a href="#" target="_blank" title="Personal Website"><i class="fas fa-globe"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="col-md-4">
-                        <div class="team-member">
-                            <div class="team-img">
-                                <img src="people-img/postdoc2.jpg" alt="Lorem Ipsum" class="img-fluid">
-                            </div>
-                            <div class="team-info">
-                                <h4>Lorem Ipsum</h4>
-                                <p class="team-title">Post-Doctoral Fellow</p>
-                                <p class="team-bio">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur non nulla sit amet nisl tempus convallis quis ac lectus. Donec rutrum congue leo eget malesuada. Sed porttitor lectus nibh. Proin eget tortor risus.</p>
-                                <p><strong>Education:</strong> Lorem ipsum dolor sit amet</p>
-                                <div class="team-social">
-                                    <a href="mailto:lorem@luc.edu" title="Email"><i class="fas fa-envelope"></i></a>
-                                    <a href="#" target="_blank" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-                                    <a href="#" target="_blank" title="Google Scholar"><i class="fas fa-graduation-cap"></i></a>
-                                    <a href="#" target="_blank" title="ORCID"><i class="fab fa-orcid"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="col-md-4">
-                        <div class="team-member">
-                            <div class="team-img">
-                                <img src="people-img/postdoc3.jpg" alt="Lorem Ipsum" class="img-fluid">
-                            </div>
-                            <div class="team-info">
-                                <h4>Lorem Ipsum</h4>
-                                <p class="team-title">Post-Doctoral Fellow</p>
-                                <p class="team-bio">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus magna justo, lacinia eget consectetur sed, convallis at tellus. Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem. Donec sollicitudin molestie malesuada.</p>
-                                <p><strong>Education:</strong> Lorem ipsum dolor sit amet</p>
-                                <div class="team-social">
-                                    <a href="mailto:lorem@luc.edu" title="Email"><i class="fas fa-envelope"></i></a>
-                                    <a href="#" target="_blank" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-                                    <a href="#" target="_blank" title="Google Scholar"><i class="fas fa-graduation-cap"></i></a>
-                                    <a href="#" target="_blank" title="ResearchGate"><i class="fab fa-researchgate"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div> -->
-            
-            <!-- Graduate Students -->
             <div class="team-category">
                 <h3 class="team-category-title">Graduate Students</h3>
                 <div class="row">
@@ -440,6 +396,25 @@
                                     <a href="https://scholar.google.com/citations?user=SJXL4BEAAAAJ&hl=en" target="_blank" title="Google Scholar"><i class="fas fa-graduation-cap"></i></a>
                                     <a href="https://www.researchgate.net/profile/Arslan-Bisharat" target="_blank" title="ResearchGate"><i class="fab fa-researchgate"></i></a>
                                     <a href="https://www.arslanbisharat.com" target="_blank" title="Personal Website"><i class="fas fa-globe"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-md-4">
+                        <div class="team-member">
+                            <div class="team-img">
+                                <img src="people-img/angelos.png" alt="Angelos Vasilopoulos" class="img-fluid">
+                            </div>
+                            <div class="team-info">
+                                <h4>Angelos Vasilopoulos</h4>
+                                <p class="team-title">MD - 3rd Year</p>
+                                <p class="team-bio">Angelos Vasilopoulos is a student at the Stritch School of Medicine. He graduated from Loyola University in 2023 with a degree in statistics. His research interests include machine learning for clinical decision-making and outcomes modeling, computational omics, and pharmacoeconomics.</p>
+                                <p><strong>Education: </strong>Loyola University Chicago</p>
+                                <div class="team-social">
+                                    <a href="mailto:avasilopoulos1@luc.edu" title="Email"><i class="fas fa-envelope"></i></a>
+                                    <a href="https://www.linkedin.com/in/angelos-vasilopoulos-9a6144360/" target="_blank" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                                    <a href="https://scholar.google.com/citations?user=CX514a4AAAAJ&hl=en&oi=ao" target="_blank" title="Google Scholar"><i class="fas fa-graduation-cap"></i></a>
                                 </div>
                             </div>
                         </div>
@@ -468,37 +443,10 @@
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
-
-    <!-- Lab Alumni -->
-    <!-- <section class="py-5">
-        <div class="container">
+            
+            <!-- Join Our Team box -->
             <div class="row">
-                <div class="col-lg-8">
-                    <h2 class="section-title">Lab Alumni</h2>
-                    
-                    <div class="alumni-item">
-                        <h5 class="alumni-name">Lorem Ipsum</h5>
-                        <p class="alumni-position">Post-Doctoral Fellow</p>
-                        <p class="alumni-years">2020 - 2023</p>
-                        <p>Currently Assistant Professor at Lorem Ipsum University</p>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla quis lorem ut libero malesuada feugiat. Donec rutrum congue leo eget malesuada. Cras ultricies ligula sed magna dictum porta. Curabitur aliquet quam id dui posuere blandit.</p>
-                        <div class="mt-2">
-                            <a href="mailto:lorem@ipsum.edu" class="btn btn-sm btn-outline-secondary me-2" title="Email">
-                                <i class="fas fa-envelope me-1"></i> Email
-                            </a>
-                            <a href="#" class="btn btn-sm btn-outline-secondary me-2" target="_blank" title="LinkedIn">
-                                <i class="fab fa-linkedin-in me-1"></i> LinkedIn
-                            </a>
-                            <a href="#" class="btn btn-sm btn-outline-secondary" target="_blank" title="Faculty Profile">
-                                <i class="fas fa-university me-1"></i> Faculty Profile
-                            </a>
-                        </div>
-                    </div>
-                     -->
-                
-                <div class="col-lg-4">
+                <div class="col-lg-4 offset-lg-4">
                     <div class="join-box">
                         <h4>Join Our Team</h4>
                         <p>We are always looking for talented and motivated individuals to join our research team. We currently have openings for:</p>
