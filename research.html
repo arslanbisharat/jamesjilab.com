@@ -46,22 +46,37 @@
         }
         
         .page-header {
-            background: url('logos/research.png');
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('logos/research.png');
             background-size: cover;
             background-position: center;
             color: white;
-            padding: 80px 0;
+            padding: 100px 0;
             margin-bottom: 0;
+            position: relative;
         }
         
         .btn-primary {
             background-color: var(--primary);
             border-color: var(--primary);
+            transition: all 0.3s ease;
         }
         
         .btn-primary:hover {
             background-color: #6a0000;
             border-color: #6a0000;
+            transform: translateY(-2px);
+        }
+        
+        .btn-outline-primary {
+            color: var(--primary);
+            border-color: var(--primary);
+            transition: all 0.3s ease;
+        }
+        
+        .btn-outline-primary:hover {
+            background-color: var(--primary);
+            color: white;
+            transform: translateY(-2px);
         }
         
         .section-title {
@@ -123,16 +138,17 @@
         
         .publication-item {
             border-left: 3px solid var(--primary);
-            padding: 20px;
-            margin-bottom: 25px;
+            padding: 25px;
+            margin-bottom: 30px;
             transition: all 0.3s ease;
             background-color: white;
-            box-shadow: 0 3px 10px rgba(0,0,0,0.05);
+            box-shadow: 0 3px 15px rgba(0,0,0,0.08);
+            border-radius: 5px;
         }
         
         .publication-item:hover {
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+            transform: translateY(-5px);
         }
         
         .publication-year {
@@ -141,48 +157,65 @@
             margin-bottom: 20px;
             padding-bottom: 10px;
             border-bottom: 1px solid #eee;
+            font-size: 1.2rem;
         }
         
         .pub-author {
-            font-weight: 600;
+            font-weight: 500;
+            margin-bottom: 10px;
         }
         
         .pub-title {
             color: var(--secondary);
-            margin-bottom: 10px;
+            margin-bottom: 12px;
             font-weight: 600;
+            font-size: 1.25rem;
         }
         
         .pub-journal {
             font-style: italic;
+            margin-bottom: 15px;
+            color: #555;
         }
         
         .publication-filter {
             margin-bottom: 30px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
         }
         
         .filter-btn {
             margin: 0 5px 10px 0;
-            padding: 8px 15px;
+            padding: 8px 18px;
             background-color: white;
             border: 1px solid #ddd;
             border-radius: 30px;
             font-size: 14px;
             transition: all 0.3s ease;
+            font-weight: 500;
         }
         
         .filter-btn:hover, .filter-btn.active {
             background-color: var(--primary);
             color: white;
             border-color: var(--primary);
+            transform: translateY(-2px);
         }
         
         .publication-metrics {
-            background-color: #f8f9fa;
+            background-color: white;
             padding: 30px;
-            border-radius: 5px;
+            border-radius: 8px;
             margin-bottom: 30px;
             text-align: center;
+            box-shadow: 0 3px 15px rgba(0,0,0,0.08);
+            transition: all 0.3s ease;
+        }
+        
+        .publication-metrics:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
         }
         
         .metric-number {
@@ -193,8 +226,9 @@
         }
         
         .metric-label {
-            font-size: 0.9rem;
+            font-size: 1rem;
             color: var(--secondary);
+            font-weight: 500;
         }
         
         .external-link-icon {
@@ -211,32 +245,159 @@
         .card {
             transition: all 0.3s ease;
             border: none;
+            border-radius: 8px;
+            overflow: hidden;
+            height: 100%;
+            box-shadow: 0 3px 15px rgba(0,0,0,0.08);
         }
         
         .card:hover {
             transform: translateY(-5px);
-            box-shadow: 0 10px 20px rgba(0,0,0,0.1) !important;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.15) !important;
+        }
+        
+        .card-body {
+            padding: 1.5rem;
         }
         
         .card-footer {
             border-top: 1px solid rgba(0,0,0,0.05);
+            padding: 1rem 1.5rem;
+            background-color: white;
+        }
+        
+        .card-title {
+            color: var(--secondary);
+            font-weight: 600;
+            margin-bottom: 0.75rem;
+            font-size: 1.2rem;
+            line-height: 1.4;
         }
         
         /* Research areas */
         .research-area {
-            margin-bottom: 40px;
+            background-color: white;
+            border-radius: 8px;
+            padding: 30px;
+            margin-bottom: 30px;
+            text-align: center;
+            box-shadow: 0 3px 15px rgba(0,0,0,0.08);
+            transition: all 0.3s ease;
+            height: 100%;
+        }
+        
+        .research-area:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
         }
         
         .research-area-title {
             color: var(--secondary);
             font-weight: 600;
             margin-bottom: 15px;
+            font-size: 1.3rem;
         }
         
         .research-area-icon {
             font-size: 2.5rem;
             color: var(--primary);
             margin-bottom: 20px;
+        }
+        
+        .pub-actions {
+            margin-top: 15px;
+        }
+        
+        .abstract-btn {
+            margin-right: 8px;
+        }
+        
+        .pub-actions .btn {
+            transition: all 0.3s ease;
+        }
+        
+        .pub-actions .btn:hover {
+            transform: translateY(-2px);
+        }
+        
+        .collapse-content {
+            margin-top: 15px;
+            background-color: var(--light);
+            border-radius: 5px;
+            padding: 15px;
+        }
+        
+        .partner-card {
+            background-color: white;
+            border-radius: 8px;
+            padding: 25px;
+            height: 100%;
+            text-align: center;
+            box-shadow: 0 3px 15px rgba(0,0,0,0.08);
+            transition: all 0.3s ease;
+        }
+        
+        .partner-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+        }
+        
+        .partner-card h5 {
+            color: var(--secondary);
+            font-weight: 600;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid var(--primary);
+            display: inline-block;
+        }
+        
+        .partner-card ul {
+            text-align: left;
+            margin-top: 15px;
+        }
+        
+        .partner-card li {
+            margin-bottom: 8px;
+            position: relative;
+            padding-left: 20px;
+        }
+        
+        .partner-card li:before {
+            content: "•";
+            color: var(--primary);
+            position: absolute;
+            left: 0;
+            font-weight: bold;
+        }
+        
+        /* Funding section */
+        .funding-card {
+            background-color: white;
+            border-radius: 8px;
+            padding: 25px;
+            text-align: center;
+            box-shadow: 0 3px 15px rgba(0,0,0,0.08);
+            transition: all 0.3s ease;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .funding-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+        }
+        
+        .funding-card img {
+            max-height: 70px;
+            margin-bottom: 15px;
+        }
+        
+        .funding-card p {
+            margin-bottom: 0;
+            color: #555;
         }
     </style>
 </head>
@@ -264,6 +425,9 @@
                         <a class="nav-link" href="resources.html">Resources</a>
                     </li>
                     <li class="nav-item">
+                        <a class="nav-link" href="join.html">Join Us</a>
+                    </li>
+                    <li class="nav-item">
                         <a class="nav-link" href="contact.html">Contact</a>
                     </li>
                 </ul>
@@ -285,15 +449,15 @@
             <h2 class="section-title">Research Focus</h2>
             <div class="row">
                 <div class="col-lg-6">
-                    <p>The Ji Laboratory studies the molecular basis underlying acute respiratory distress syndrome (ARDS), sepsis, and lung sarcoidosis. Our research aims to study new phenotypes, endotypes, druggable targets, biomarkers, and predictive models that can benefit personalized medicine (precision medicine). </p>                    
+                    <p>The Ji Laboratory studies the molecular basis underlying acute respiratory distress syndrome (ARDS), sepsis, and lung sarcoidosis. Our research aims to study new phenotypes, endotypes, druggable targets, biomarkers, and predictive models that can benefit personalized medicine (precision medicine).</p>                    
                     <p>Our key research areas include:</p>
                     <ul>
-                    <li><b>Clustering Endotypes for Subphenotypes: </b>Applying cutting-edge techniques including metaproteomics, host trans-omics, and machine learning to identify endotypes and biomarkers. </li>
-                <li>   <b>Modeling Pulmonary Critical Diseases: </b> Develop predictive models to precisely predict the outcomes and treatment responses.  </li>    
-                <li>    <b>Fibrinolytic System in Injured Lungs: </b> Studying the critical role of fibrinolysis and lung epithelial proteins in COVID-19 and edema fluid resolution. </li>
-                <li>    <b>Validation of Crucial Function of Diseased Genes: </b> Examining how SFTPC and Wnt pathways affect alveolar epithelial cell fate in fibrotic lungs. </li>
-            <li>    <b>Epithelial Sodium Channels in Lung Injury:</b> Investigating the role of ENaC in the pathogenesis of lung edema using humanized SCNN1D knockin mouse models </li>    
-            </ul>
+                        <li><b>Clustering Endotypes for Subphenotypes: </b>Applying cutting-edge techniques including metaproteomics, host trans-omics, and machine learning to identify endotypes and biomarkers.</li>
+                        <li><b>Modeling Pulmonary Critical Diseases: </b>Develop predictive models to precisely predict the outcomes and treatment responses.</li>    
+                        <li><b>Fibrinolytic System in Injured Lungs: </b>Studying the critical role of fibrinolysis and lung epithelial proteins in COVID-19 and edema fluid resolution.</li>
+                        <li><b>Validation of Crucial Function of Diseased Genes: </b>Examining how SFTPC and Wnt pathways affect alveolar epithelial cell fate in fibrotic lungs.</li>
+                        <li><b>Epithelial Sodium Channels in Lung Injury: </b>Investigating the role of ENaC in the pathogenesis of lung edema using humanized SCNN1D knockin mouse models.</li>    
+                    </ul>
                 </div>
                 <div class="col-lg-6">
                     <img src="people-img/james_labcoat.jpg" alt="Ji Laboratory Research" class="img-fluid rounded shadow">
@@ -306,9 +470,9 @@
     <section class="py-5 bg-light">
         <div class="container">
             <h2 class="section-title text-center">Research Areas in Detail</h2>
-            <div class="row">
+            <div class="row g-4">
                 <div class="col-lg-4">
-                    <div class="research-area text-center">
+                    <div class="research-area">
                         <div class="research-area-icon">
                             <i class="fas fa-microscope"></i>
                         </div>
@@ -318,7 +482,7 @@
                 </div>
                 
                 <div class="col-lg-4">
-                    <div class="research-area text-center">
+                    <div class="research-area">
                         <div class="research-area-icon">
                             <i class="fas fa-chart-line"></i>
                         </div>
@@ -328,7 +492,7 @@
                 </div>
                 
                 <div class="col-lg-4">
-                    <div class="research-area text-center">
+                    <div class="research-area">
                         <div class="research-area-icon">
                             <i class="fas fa-lungs"></i>
                         </div>
@@ -338,9 +502,9 @@
                 </div>
             </div>
             
-            <div class="row mt-4">
+            <div class="row g-4 mt-2">
                 <div class="col-lg-6">
-                    <div class="research-area text-center">
+                    <div class="research-area">
                         <div class="research-area-icon">
                             <i class="fas fa-dna"></i>
                         </div>
@@ -350,7 +514,7 @@
                 </div>
                 
                 <div class="col-lg-6">
-                    <div class="research-area text-center">
+                    <div class="research-area">
                         <div class="research-area-icon">
                             <i class="fas fa-exchange-alt"></i>
                         </div>
@@ -361,13 +525,6 @@
             </div>
         </div>
     </section>
-
-    <!-- Publication Divider -->
-    <div class="py-3">
-        <div class="container">
-            <hr>
-        </div>
-    </div>
 
     <!-- Publications Overview -->
     <section class="py-5">
@@ -407,7 +564,7 @@
                 </div>
             </div>
             
-            <div class="row">
+            <div class="row g-4 mt-2">
                 <div class="col-md-3">
                     <div class="publication-metrics">
                         <p class="metric-number">3,500+</p>
@@ -437,13 +594,28 @@
         </div>
     </section>
 
+    <!-- Publication Filters -->
+    <section class="py-3">
+        <div class="container">
+            <div class="publication-filter">
+                <button class="filter-btn active" data-filter="all">All Publications</button>
+                <button class="filter-btn" data-filter="2024">2024</button>
+                <button class="filter-btn" data-filter="2023">2023</button>
+                <button class="filter-btn" data-filter="2022">2022</button>
+                <button class="filter-btn" data-filter="2021">2021</button>
+                <button class="filter-btn" data-filter="peer-reviewed">Peer-Reviewed</button>
+                <button class="filter-btn" data-filter="conference">Conference Papers</button>
+            </div>
+        </div>
+    </section>
+
     <!-- Featured Publications Section -->
     <section class="py-5 bg-light">
         <div class="container">
             <h2 class="section-title text-center">Featured Publications</h2>
             <p class="text-center mb-5">A selection of our most impactful recent work</p>
             
-            <div class="row">
+            <div class="row g-4">
                 <!-- Featured Publication 1 -->
                 <div class="col-lg-4 mb-4">
                     <div class="card h-100 shadow-sm">
@@ -457,216 +629,6 @@
                         </div>
                     </div>
                 </div>
-<<<<<<< HEAD
-            </div>
-        </div>
-        
-        <div id="publications-container">
-
-        <!-- Publication 2024-1 Pulmonary fibrosis -->
-<div class="publication-item" data-year="2024" data-type="peer-reviewed">
-    <div class="publication-year">2024</div>
-    <p class="pub-author">Cao P, <strong>Ji HL</strong>, Sun J</p>
-    <h5 class="pub-title">Pulmonary fibrosis and endocrine factors</h5>
-    <p class="pub-journal">Frontiers in Endocrinology, 15, 1519318</p>
-    <div class="pub-actions">
-        <button class="btn btn-sm btn-outline-primary mb-2 abstract-btn" data-bs-toggle="collapse" data-bs-target="#abstract-2024-1">
-            <i class="fas fa-file-alt me-1"></i> Abstract
-        </button>
-        <a href="https://www.frontiersin.org/journals/endocrinology/articles/10.3389/fendo.2024.1519318/pdf" target="_blank" class="btn btn-sm btn-outline-secondary mb-2">
-            <i class="fas fa-external-link-alt me-1"></i> View Paper
-        </a>
-    </div>
-    <div class="collapse" id="abstract-2024-1">
-        <div class="card card-body mt-2 mb-3 bg-light">
-            <p>Pulmonary fibrosis (PF) is a complex and highly heterogeneous disease characterized by the accumulation of stiffened extracellular matrix in lung tissue, the replacement of normal lung tissue with fibrotic tissue, and the progressive loss of lung function. PF is induced by genetic, environmental, and inflammatory factors and is associated with metabolic disorders. Extracellular bioactive mediators, such as endocrine factors and metabolites, play critical roles in the progression of PF. For instance, iron promotes PF by activating fibroblasts (1). Animal models have also demonstrated that thyroid hormone, brain-derived neurotrophic factor, and atrial natriuretic peptide regulate PF (2)(3)(4). Focusing treatment on dysregulated endocrine factors rather than inhibiting downstream fibrosis markers may be more effective. In addition, supplementing endogenous cytokines or metabolites theoretically results in fewer side effects than exogenous drugs. This research topic, "Pulmonary Fibrosis and Endocrine Factors", aims to define the endogenous factors associated with pulmonary fibrosis in order to facilitate the discovery of novel and effective therapeutic strategies with fewer side effects. This collection addresses the roles of lipid metabolism, glucose metabolism, complement pathway, and serum biomarkers in PF or cystic fibrosis (CF). It also investigates the association of vitamin D metabolism-related single nucleotide polymorphisms with the risk of chronic obstructive pulmonary disease (COPD).</p>
-        </div>
-    </div>
-</div>
-
-<!-- Publication 2024-2 Understanding Sarcoidosis -->
-<div class="publication-item" data-year="2024" data-type="peer-reviewed">
-    <div class="publication-year">2024</div>
-    <p class="pub-author">Xi NM, <strong>Ji HL</strong>, Wang L</p>
-    <h5 class="pub-title">Understanding Sarcoidosis Using Large Language Models and Social Media Data</h5>
-    <p class="pub-journal">Journal of Healthcare Informatics Research, 1-26</p>
-    <div class="pub-actions">
-        <button class="btn btn-sm btn-outline-primary mb-2 abstract-btn" data-bs-toggle="collapse" data-bs-target="#abstract-2024-2">
-            <i class="fas fa-file-alt me-1"></i> Abstract
-        </button>
-        <a href="https://arxiv.org/pdf/2405.13005" target="_blank" class="btn btn-sm btn-outline-secondary mb-2">
-            <i class="fas fa-external-link-alt me-1"></i> View Paper
-        </a>
-    </div>
-    <div class="collapse" id="abstract-2024-2">
-        <div class="card card-body mt-2 mb-3 bg-light">
-            <p>Sarcoidosis is a rare inflammatory disease characterized by the formation of granulomas in various organs. The disease presents diagnostic and treatment challenges due to its diverse manifestations and unpredictable nature. In this study, we employed a Large Language Model (LLM) to analyze sarcoidosis-related discussions on the social media platform Reddit. Our findings underscore the efficacy of LLMs in accurately identifying sarcoidosis-related content. We discovered a wide array of symptoms reported by patients, with fatigue, swollen lymph nodes, and shortness of breath as the most prevalent. Prednisone was the most prescribed medication, while infliximab showed the highest effectiveness in improving prognoses. Notably, our analysis revealed disparities in prognosis based on age and gender, with women and younger patients experiencing good and polarized outcomes, respectively.</p>
-        </div>
-    </div>
-</div>
-
-<!-- Publication 2024-3 Surfactant Protein-C -->
-<div class="publication-item" data-year="2024" data-type="peer-reviewed">
-    <div class="publication-year">2024</div>
-    <p class="pub-author">Jain KG, Liu Y, Zhao R, Muire PJ, Xi NM, <strong>Ji HL</strong></p>
-    <h5 class="pub-title">Surfactant Protein-C Regulates Alveolar Type 2 Epithelial Cell Lineages via the CD74 Receptor</h5>
-    <p class="pub-journal">Journal of respiratory biology and translational medicine, 1(4), 10017</p>
-    <div class="pub-actions">
-        <button class="btn btn-sm btn-outline-primary mb-2 abstract-btn" data-bs-toggle="collapse" data-bs-target="#abstract-2024-3">
-            <i class="fas fa-file-alt me-1"></i> Abstract
-        </button>
-        <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC11565471/" target="_blank" class="btn btn-sm btn-outline-secondary mb-2">
-            <i class="fas fa-external-link-alt me-1"></i> View Paper
-        </a>
-    </div>
-    <div class="collapse" id="abstract-2024-3">
-        <div class="card card-body mt-2 mb-3 bg-light">
-            <p><strong>Background:</strong> Deficiency of surfactant protein-C (SPC) increases susceptibility to lung infections and injury, and suppressed expression of SPC has been associated with the severity of acute respiratory distress syndrome (ARDS). Alveolar type 2 epithelial cells (AT2) are critical for maintenance and repair of the lung. However, the role of the SPC in the regulation of AT2 cell lineage and the underlying mechanisms are not completely understood.</p>
-            <p><strong>Methods:</strong> This study aimed to investigate the mechanisms by which SPC regulates AT2 lineages. Sftpc−/− mice were used to model the SPC deficiency in ARDS patients. We utilized three-dimensional (3D) organoids to compare AT2 lineage characteristics between wild type (WT) and Sftpc−/− mice by analyzing AT2 proliferation, alveolar type 1 cells (AT1) differentiation and CD74 expression, using colony-formation assay, immunofluorescence, flow cytometry, and...</p>
-        </div>
-    </div>
-</div>
-
-<!-- Publication 2024-4 Humanized L184Q -->
-<div class="publication-item" data-year="2024" data-type="peer-reviewed">
-    <div class="publication-year">2024</div>
-    <p class="pub-author">Jain KG, Liu Y, Zhao R, Muire PJ, Zhang J, Zang QS, <strong>Ji HL</strong></p>
-    <h5 class="pub-title">Humanized L184Q Mutated Surfactant Protein C Gene Alters Alveolar Type 2 Epithelial Cell Fate</h5>
-    <p class="pub-journal">International Journal of Molecular Sciences, 25(16), 8723</p>
-    <div class="pub-actions">
-        <button class="btn btn-sm btn-outline-primary mb-2 abstract-btn" data-bs-toggle="collapse" data-bs-target="#abstract-2024-4">
-            <i class="fas fa-file-alt me-1"></i> Abstract
-        </button>
-        <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC11354303/" target="_blank" class="btn btn-sm btn-outline-secondary mb-2">
-            <i class="fas fa-external-link-alt me-1"></i> View Paper
-        </a>
-    </div>
-    <div class="collapse" id="abstract-2024-4">
-        <div class="card card-body mt-2 mb-3 bg-light">
-            <p>Alveolar type 2 epithelial (AT2) cells synthesize surfactant protein C (SPC) and repair an injured alveolar epithelium. A mutated surfactant protein C gene (SftpcL184Q, Gene ID: 6440) in newborns has been associated with respiratory distress syndrome and pulmonary fibrosis. However, the underlying mechanisms causing Sftpc gene mutations to regulate AT2 lineage remain unclear. We utilized three-dimensional (3D) feeder-free AT2 organoids in vitro to simulate the alveolar epithelium and compared AT2 lineage characteristics between WT (C57BL/6) and SftpcL184Q mutant mice using colony formation assays, immunofluorescence, flow cytometry, qRT-PCR, and Western blot assays. The AT2 numbers were reduced significantly in SftpcL184Q mice. Organoid numbers and colony-forming efficiency were significantly attenuated in the 3D cultures of primary SftpcL184Q AT2 cells compared to those of WT mice...</p>
-        </div>
-    </div>
-</div>
-
-<!-- Publication 2024-5 PROTEOMIC IDENTIFICATION -->
-<div class="publication-item" data-year="2024" data-type="conference">
-    <div class="publication-year">2024</div>
-    <p class="pub-author">Xi NM, <strong>Ji HL</strong>, Vasilopoulos A, Zhao R</p>
-    <h5 class="pub-title">PROTEOMIC IDENTIFICATION OF REGENERATIVE NICHES AND DRUGGABLE TARGETS FOR ARDS LUNGS</h5>
-    <p class="pub-journal">SHOCK, 62(1), 100-100</p>
-    <div class="pub-actions">
-        <button class="btn btn-sm btn-outline-primary mb-2 abstract-btn" data-bs-toggle="collapse" data-bs-target="#abstract-2024-5">
-            <i class="fas fa-file-alt me-1"></i> Abstract
-        </button>
-        <a href="#" target="_blank" class="btn btn-sm btn-outline-secondary mb-2">
-            <i class="fas fa-external-link-alt me-1"></i> View Paper
-        </a>
-    </div>
-    <div class="collapse" id="abstract-2024-5">
-        <div class="card card-body mt-2 mb-3 bg-light">
-            <p>Abstract not available</p>
-        </div>
-    </div>
-</div>
-
-<!-- Publication 2024-6 CLINICAL VARIABLE -->
-<div class="publication-item" data-year="2024" data-type="conference">
-    <div class="publication-year">2024</div>
-    <p class="pub-author">Vasilopoulos A, Xi NM, Zhao R, <strong>Ji HL</strong></p>
-    <h5 class="pub-title">CLINICALVARIABLE-BASED PREDICTION OF ACUTE RESPIRATORY DISTRESS SYNDROME ENDOTYPES</h5>
-    <p class="pub-journal">SHOCK, 62(1), 18-19</p>
-    <div class="pub-actions">
-        <button class="btn btn-sm btn-outline-primary mb-2 abstract-btn" data-bs-toggle="collapse" data-bs-target="#abstract-2024-6">
-            <i class="fas fa-file-alt me-1"></i> Abstract
-        </button>
-        <a href="#" target="_blank" class="btn btn-sm btn-outline-secondary mb-2">
-            <i class="fas fa-external-link-alt me-1"></i> View Paper
-        </a>
-    </div>
-    <div class="collapse" id="abstract-2024-6">
-        <div class="card card-body mt-2 mb-3 bg-light">
-            <p>Abstract not available</p>
-        </div>
-    </div>
-</div>
-
-<!-- Publication 2024-7 SURFACTANT PROTEIN -->
-<div class="publication-item" data-year="2024" data-type="conference">
-    <div class="publication-year">2024</div>
-    <p class="pub-author">Jain KG, Zhao R, <strong>Ji HL</strong></p>
-    <h5 class="pub-title">SURFACTANT PROTEIN C REGULATES ALVEOLAR TYPE 2 CELL LINEAGE</h5>
-    <p class="pub-journal">SHOCK, 62(1), 53-53</p>
-    <div class="pub-actions">
-        <button class="btn btn-sm btn-outline-primary mb-2 abstract-btn" data-bs-toggle="collapse" data-bs-target="#abstract-2024-7">
-            <i class="fas fa-file-alt me-1"></i> Abstract
-        </button>
-        <a href="#" target="_blank" class="btn btn-sm btn-outline-secondary mb-2">
-            <i class="fas fa-external-link-alt me-1"></i> View Paper
-        </a>
-    </div>
-    <div class="collapse" id="abstract-2024-7">
-        <div class="card card-body mt-2 mb-3 bg-light">
-            <p>Abstract not available</p>
-        </div>
-    </div>
-</div>
-
-<!-- Publication 2024-8 Infection-suppressed -->
-<div class="publication-item" data-year="2024" data-type="peer-reviewed">
-    <div class="publication-year">2024</div>
-    <p class="pub-author">Jain K, <strong>Ji HL</strong>, Zhao R</p>
-    <h5 class="pub-title">Infection-suppressed surfactant protein C alters alveolar type 2 cell lineage</h5>
-    <p class="pub-journal">The Journal of Immunology, 212(1_Supplement), 1291_4519-1291_4519</p>
-    <div class="pub-actions">
-        <button class="btn btn-sm btn-outline-primary mb-2 abstract-btn" data-bs-toggle="collapse" data-bs-target="#abstract-2024-8">
-            <i class="fas fa-file-alt me-1"></i> Abstract
-        </button>
-        <a href="#" target="_blank" class="btn btn-sm btn-outline-secondary mb-2">
-            <i class="fas fa-external-link-alt me-1"></i> View Paper
-        </a>
-    </div>
-    <div class="collapse" id="abstract-2024-8">
-        <div class="card card-body mt-2 mb-3 bg-light">
-            <p>Suppressed surfactant protein C is a hallmark of respiratory infections. Acute Respiratory Distress Syndrome (ARDS) is a critical condition in pneumonia, COVID-19, and sepsis and involves damaged epithelial lining, cytokine storms, and lung edema. Alveolar type 2 (AT2) epithelial cells are stem cells of the distal lung and are vital for lung repair. AT2 cells secrete surfactant protein C which protects alveoli from collapse and infections. Whether downregulated SP-C affects the re-alveolarization via regulating AT2 fate remains unclear. We used alveolar organoids to compare AT2 lineages in wild-type (wt), sftpcI'll continue with the code for the remaining publications. Here's the HTML for the additional publications, picking up where the previous entry left off:
-                <!-- Publication 2024-8 Infection-suppressed (continuation) -->
-                gene mutated L184Q mice, and disrupted sftpc gene (KO) mice. H1N1 infection reduced AT2 cells in KO mice. Sftpc deficiency led to fewer AT2 cells and reduced organoid counts and organoid colony-forming efficiency in KO mice compared to wt controls. Confocal images and western blotting indicated decreased AT2 cell markers (SP-C, ST3GAL2, LAMP3) and increased differentiation of AT2 to AT1 cells in KO mice. Our findings demonstrate how suppressed SP-C during respiratory infections alters AT2 cell fate and impacts their regenerative capacity.</p>
-                </div>
-                </div>
-                </div>
-                <!-- Publication 2024-9 Metabolic signatures -->
-                <div class="publication-item" data-year="2024" data-type="peer-reviewed">
-                    <div class="publication-year">2024</div>
-                    <p class="pub-author">Ji X, <strong>Ji HL</strong></p>
-                    <h5 class="pub-title">Metabolic signatures of acute respiratory distress syndrome: COVID versus non-COVID</h5>
-                    <p class="pub-journal">American Journal of Physiology-Lung Cellular and Molecular Physiology, 326(5), L596-L603</p>
-                    <div class="pub-actions">
-                        <button class="btn btn-sm btn-outline-primary mb-2 abstract-btn" data-bs-toggle="collapse" data-bs-target="#abstract-2024-9">
-                            <i class="fas fa-file-alt me-1"></i> Abstract
-                        </button>
-                        <a href="https://journals.physiology.org/doi/pdf/10.1152/ajplung.00266.2023" target="_blank" class="btn btn-sm btn-outline-secondary mb-2">
-                            <i class="fas fa-external-link-alt me-1"></i> View Paper
-                        </a>
-                    </div>
-                    <div class="collapse" id="abstract-2024-9">
-                        <div class="card card-body mt-2 mb-3 bg-light">
-                            <p>Acute respiratory distress syndrome (ARDS) is a fatal pulmonary disorder characterized by severe hypoxia and inflammation. ARDS is commonly triggered by systemic and pulmonary infections, with bacteria and viruses. Notable pathogens include *Pseudomonas aeruginosa*, *Streptococcus aureus*, *Enterobacter species*, coronaviruses, influenza viruses, and herpesviruses. COVID-19 ARDS represents the latest etiological phenotype of the disease. The pathogenesis of ARDS caused by bacteria and viruses exhibits variations in host immune responses and lung mesenchymal injury. We postulate that the systemic and pulmonary metabolomics profiles of ARDS induced by COVID-19 pathogens may exhibit distinctions compared with those induced by other infectious agents. This review aims to compare metabolic signatures in blood and lung specimens specifically within the context of ARDS. Both prevalent and...</p>
-                        </div>
-                    </div>
-                </div>
-            <!-- Publication 2021-1 Fibrinolytic niche -->
-            <div class="publication-item" data-year="2021" data-type="peer-reviewed">
-                <div class="publication-year">2021</div>
-                <p class="pub-author">Ali G, Zhang M, Zhao R, Jain KG, Chang J, Komatsu S, Zhou B, Liang J, Matthay MA, <strong>Ji HL</strong></p>
-                <h5 class="pub-title">Fibrinolytic niche is required for alveolar type 2 cell-mediated alveologenesis via a uPA-A6-CD44+-ENaC signal cascade</h5>
-                <p class="pub-journal">Signal Transduction and Targeted Therapy, 6(1), 97</p>
-                <div class="pub-actions">
-                    <button class="btn btn-sm btn-outline-primary mb-2 abstract-btn" data-bs-toggle="collapse" data-bs-target="#abstract-2021-1">
-                        <i class="fas fa-file-alt me-1"></i> Abstract
-                    </button>
-                    <a href="https://www.nature.com/articles/s41392-021-00511-9" target="_blank" class="btn btn-sm btn-outline-secondary mb-2">
-                        <i class="fas fa-external-link-alt me-1"></i> View Paper
-                    </a>
-=======
                 
                 <!-- Featured Publication 2 -->
                 <div class="col-lg-4 mb-4">
@@ -680,7 +642,6 @@
                             <a href="https://www.frontiersin.org/journals/immunology/articles/10.3389/fimmu.2021.691249/full" target="_blank" class="btn btn-sm btn-outline-primary">View Paper</a>
                         </div>
                     </div>
->>>>>>> 9530643abc331ab1ca556cf15eb2b78f1528c5e9
                 </div>
                 
                 <!-- Featured Publication 3 -->
@@ -698,7 +659,7 @@
                 </div>
             </div>
             
-            <div class="row">
+            <div class="row g-4 mt-2">
                 <!-- Featured Publication 4 -->
                 <div class="col-lg-4 mb-4">
                     <div class="card h-100 shadow-sm">
@@ -731,92 +692,263 @@
                 <div class="col-lg-4 mb-4">
                     <div class="card h-100 shadow-sm">
                         <div class="card-body">
-                            <h5 class="card-title">Elevated plasmin (ogen) as a common risk factor for COVID-19 susceptibility</h5>
-                            <p class="card-text text-muted">American Physiological Society Bethesda, MD</p>
-                            <p class="card-text">Elevated plasmin(ogen) in patients with comorbidities promotes SARS‑CoV‑2 spike protein cleavage and hyperfibrinolysis, increasing COVID‑19 infectivity and severity and highlighting antiprotease targeting of plasmin(ogen) as a potential therapy.</p>
+                            <h5 class="card-title">Elevated plasmin(ogen) as a common risk factor for COVID-19 susceptibility</h5>
+                            <p class="card-text text-muted">American Physiological Society (2020)</p>
+                            <p class="card-text">Study showing how elevated plasmin(ogen) in patients with comorbidities promotes SARS‑CoV‑2 spike protein cleavage and hyperfibrinolysis.</p>
                         </div>
                         <div class="card-footer bg-white">
-                            <a href="https://journals.physiology.org/doi/full/10.1152/physrev.00013.2020?utm_source=PRV&utm_medium=PressRelease&utm_campaign=4.16.2020&" target="_blank" class="btn btn-sm btn-outline-primary">View Paper</a>
+                            <a href="https://journals.physiology.org/doi/full/10.1152/physrev.00013.2020" target="_blank" class="btn btn-sm btn-outline-primary">View Paper</a>
                         </div>
                     </div>
                 </div>
             </div>
             
-            <div class="text-center mt-4">
+            <div class="text-center mt-5">
                 <a href="https://scholar.google.com/citations?user=WsQo5IoAAAAJ&hl=en" target="_blank" class="btn btn-primary">
-                    View All Publications on Google Scholar
+                    <i class="fas fa-external-link-alt me-2"></i>View All Publications on Google Scholar
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Publications List -->
+    <section class="py-5">
+        <div class="container">
+            <h2 class="section-title text-center">Recent Publications</h2>
+            <p class="text-center mb-5">Our latest scientific contributions</p>
+            
+            <div id="publications-container">
+                <!-- Publication 2024-1 -->
+                <div class="publication-item" data-year="2024" data-type="peer-reviewed">
+                    <div class="publication-year">2024</div>
+                    <p class="pub-author">Cao P, <strong>Ji HL</strong>, Sun J</p>
+                    <h5 class="pub-title">Pulmonary fibrosis and endocrine factors</h5>
+                    <p class="pub-journal">Frontiers in Endocrinology, 15, 1519318</p>
+                    <div class="pub-actions">
+                        <button class="btn btn-sm btn-outline-primary mb-2 abstract-btn" data-bs-toggle="collapse" data-bs-target="#abstract-2024-1">
+                            <i class="fas fa-file-alt me-1"></i> Abstract
+                        </button>
+                        <a href="https://www.frontiersin.org/journals/endocrinology/articles/10.3389/fendo.2024.1519318/pdf" target="_blank" class="btn btn-sm btn-outline-secondary mb-2">
+                            <i class="fas fa-external-link-alt me-1"></i> View Paper
+                        </a>
+                    </div>
+                    <div class="collapse" id="abstract-2024-1">
+                        <div class="card card-body mt-2 mb-3 bg-light">
+                            <p>Pulmonary fibrosis (PF) is a complex and highly heterogeneous disease characterized by the accumulation of stiffened extracellular matrix in lung tissue, the replacement of normal lung tissue with fibrotic tissue, and the progressive loss of lung function. PF is induced by genetic, environmental, and inflammatory factors and is associated with metabolic disorders. This research topic aims to define the endogenous factors associated with pulmonary fibrosis to facilitate the discovery of novel and effective therapeutic strategies with fewer side effects.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Publication 2024-2 -->
+                <div class="publication-item" data-year="2024" data-type="peer-reviewed">
+                    <div class="publication-year">2024</div>
+                    <p class="pub-author">Xi NM, <strong>Ji HL</strong>, Wang L</p>
+                    <h5 class="pub-title">Understanding Sarcoidosis Using Large Language Models and Social Media Data</h5>
+                    <p class="pub-journal">Journal of Healthcare Informatics Research, 1-26</p>
+                    <div class="pub-actions">
+                        <button class="btn btn-sm btn-outline-primary mb-2 abstract-btn" data-bs-toggle="collapse" data-bs-target="#abstract-2024-2">
+                            <i class="fas fa-file-alt me-1"></i> Abstract
+                        </button>
+                        <a href="https://arxiv.org/pdf/2405.13005" target="_blank" class="btn btn-sm btn-outline-secondary mb-2">
+                            <i class="fas fa-external-link-alt me-1"></i> View Paper
+                        </a>
+                    </div>
+                    <div class="collapse" id="abstract-2024-2">
+                        <div class="card card-body mt-2 mb-3 bg-light">
+                            <p>Sarcoidosis is a rare inflammatory disease characterized by the formation of granulomas in various organs. In this study, we employed a Large Language Model (LLM) to analyze sarcoidosis-related discussions on Reddit. Our findings underscore the efficacy of LLMs in accurately identifying sarcoidosis-related content. We discovered a wide array of symptoms reported by patients, with fatigue, swollen lymph nodes, and shortness of breath as the most prevalent. Prednisone was the most prescribed medication, while infliximab showed the highest effectiveness in improving prognoses.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Publication 2024-3 -->
+                <div class="publication-item" data-year="2024" data-type="peer-reviewed">
+                    <div class="publication-year">2024</div>
+                    <p class="pub-author">Jain KG, Liu Y, Zhao R, Muire PJ, Xi NM, <strong>Ji HL</strong></p>
+                    <h5 class="pub-title">Surfactant Protein-C Regulates Alveolar Type 2 Epithelial Cell Lineages via the CD74 Receptor</h5>
+                    <p class="pub-journal">Journal of Respiratory Biology and Translational Medicine, 1(4), 10017</p>
+                    <div class="pub-actions">
+                        <button class="btn btn-sm btn-outline-primary mb-2 abstract-btn" data-bs-toggle="collapse" data-bs-target="#abstract-2024-3">
+                            <i class="fas fa-file-alt me-1"></i> Abstract
+                        </button>
+                        <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC11565471/" target="_blank" class="btn btn-sm btn-outline-secondary mb-2">
+                            <i class="fas fa-external-link-alt me-1"></i> View Paper
+                        </a>
+                    </div>
+                    <div class="collapse" id="abstract-2024-3">
+                        <div class="card card-body mt-2 mb-3 bg-light">
+                            <p>Deficiency of surfactant protein-C (SPC) increases susceptibility to lung infections and injury, and suppressed expression of SPC has been associated with the severity of acute respiratory distress syndrome (ARDS). This study aimed to investigate the mechanisms by which SPC regulates AT2 lineages. We utilized three-dimensional (3D) organoids to compare AT2 lineage characteristics between wild type (WT) and Sftpc−/− mice by analyzing AT2 proliferation, alveolar type 1 cells (AT1) differentiation and CD74 expression.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Publication 2024-4 -->
+                <div class="publication-item" data-year="2024" data-type="peer-reviewed">
+                    <div class="publication-year">2024</div>
+                    <p class="pub-author">Jain KG, Liu Y, Zhao R, Muire PJ, Zhang J, Zang QS, <strong>Ji HL</strong></p>
+                    <h5 class="pub-title">Humanized L184Q Mutated Surfactant Protein C Gene Alters Alveolar Type 2 Epithelial Cell Fate</h5>
+                    <p class="pub-journal">International Journal of Molecular Sciences, 25(16), 8723</p>
+                    <div class="pub-actions">
+                        <button class="btn btn-sm btn-outline-primary mb-2 abstract-btn" data-bs-toggle="collapse" data-bs-target="#abstract-2024-4">
+                            <i class="fas fa-file-alt me-1"></i> Abstract
+                        </button>
+                        <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC11354303/" target="_blank" class="btn btn-sm btn-outline-secondary mb-2">
+                            <i class="fas fa-external-link-alt me-1"></i> View Paper
+                        </a>
+                    </div>
+                    <div class="collapse" id="abstract-2024-4">
+                        <div class="card card-body mt-2 mb-3 bg-light">
+                            <p>Alveolar type 2 epithelial (AT2) cells synthesize surfactant protein C (SPC) and repair an injured alveolar epithelium. A mutated surfactant protein C gene (SftpcL184Q, Gene ID: 6440) in newborns has been associated with respiratory distress syndrome and pulmonary fibrosis. We utilized three-dimensional (3D) feeder-free AT2 organoids in vitro to simulate the alveolar epithelium and compared AT2 lineage characteristics between WT (C57BL/6) and SftpcL184Q mutant mice. The study revealed significant impacts of this mutation on AT2 cellular behavior.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Publication 2024-5 -->
+                <div class="publication-item" data-year="2024" data-type="conference">
+                    <div class="publication-year">2024</div>
+                    <p class="pub-author">Xi NM, <strong>Ji HL</strong>, Vasilopoulos A, Zhao R</p>
+                    <h5 class="pub-title">PROTEOMIC IDENTIFICATION OF REGENERATIVE NICHES AND DRUGGABLE TARGETS FOR ARDS LUNGS</h5>
+                    <p class="pub-journal">SHOCK, 62(1), 100-100</p>
+                    <div class="pub-actions">
+                        <button class="btn btn-sm btn-outline-primary mb-2 abstract-btn" data-bs-toggle="collapse" data-bs-target="#abstract-2024-5">
+                            <i class="fas fa-file-alt me-1"></i> Abstract
+                        </button>
+                        <a href="#" target="_blank" class="btn btn-sm btn-outline-secondary mb-2">
+                            <i class="fas fa-external-link-alt me-1"></i> View Paper
+                        </a>
+                    </div>
+                    <div class="collapse" id="abstract-2024-5">
+                        <div class="card card-body mt-2 mb-3 bg-light">
+                            <p>Abstract not available</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Publication 2024-6 -->
+                <div class="publication-item" data-year="2024" data-type="conference">
+                    <div class="publication-year">2024</div>
+                    <p class="pub-author">Vasilopoulos A, Xi NM, Zhao R, <strong>Ji HL</strong></p>
+                    <h5 class="pub-title">CLINICAL VARIABLE-BASED PREDICTION OF ACUTE RESPIRATORY DISTRESS SYNDROME ENDOTYPES</h5>
+                    <p class="pub-journal">SHOCK, 62(1), 18-19</p>
+                    <div class="pub-actions">
+                        <button class="btn btn-sm btn-outline-primary mb-2 abstract-btn" data-bs-toggle="collapse" data-bs-target="#abstract-2024-6">
+                            <i class="fas fa-file-alt me-1"></i> Abstract
+                        </button>
+                        <a href="#" target="_blank" class="btn btn-sm btn-outline-secondary mb-2">
+                            <i class="fas fa-external-link-alt me-1"></i> View Paper
+                        </a>
+                    </div>
+                    <div class="collapse" id="abstract-2024-6">
+                        <div class="card card-body mt-2 mb-3 bg-light">
+                            <p>Abstract not available</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Publication 2021-1 -->
+                <div class="publication-item" data-year="2021" data-type="peer-reviewed">
+                    <div class="publication-year">2021</div>
+                    <p class="pub-author">Ali G, Zhang M, Zhao R, Jain KG, Chang J, Komatsu S, Zhou B, Liang J, Matthay MA, <strong>Ji HL</strong></p>
+                    <h5 class="pub-title">Fibrinolytic niche is required for alveolar type 2 cell-mediated alveologenesis via a uPA-A6-CD44+-ENaC signal cascade</h5>
+                    <p class="pub-journal">Signal Transduction and Targeted Therapy, 6(1), 97</p>
+                    <div class="pub-actions">
+                        <button class="btn btn-sm btn-outline-primary mb-2 abstract-btn" data-bs-toggle="collapse" data-bs-target="#abstract-2021-1">
+                            <i class="fas fa-file-alt me-1"></i> Abstract
+                        </button>
+                        <a href="https://www.nature.com/articles/s41392-021-00511-9" target="_blank" class="btn btn-sm btn-outline-secondary mb-2">
+                            <i class="fas fa-external-link-alt me-1"></i> View Paper
+                        </a>
+                    </div>
+                    <div class="collapse" id="abstract-2021-1">
+                        <div class="card card-body mt-2 mb-3 bg-light">
+                            <p>Alveolar type 2 epithelial (AT2) cells are stem cells of the distal lung and are critical for alveolar regeneration. This study investigated how the fibrinolytic system supports AT2 cell-mediated alveologenesis. Using 3D organoid models and genetically modified mice, the researchers identified a crucial signaling pathway involving urokinase-type plasminogen activator (uPA), annexin A6, CD44, and epithelial sodium channels (ENaC) that facilitates AT2 cell-mediated repair and regeneration in injured lungs.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-5">
+                <a href="https://scholar.google.com/citations?user=WsQo5IoAAAAJ&hl=en" target="_blank" class="btn btn-lg btn-primary">
+                    <i class="fas fa-book me-2"></i>View Complete Publication List
                 </a>
             </div>
         </div>
     </section>
 
     <!-- Collaborations Section -->
-    <section class="py-5">
+    <section class="py-5 bg-light">
         <div class="container">
             <h2 class="section-title text-center">Research Collaborations</h2>
             <p class="text-center mb-5">Our research benefits from collaborations with leading scientists and clinicians from across the world</p>
             
-            <div class="row">
-                <div class="col-md-4 text-center mb-4">
-                    <h5>Clinical Partners</h5>
-                    <ul class="list-unstyled">
-                        <li>Department of Surgery, Loyola University Chicago</li>
-                        <li>Burn and Shock Trauma Research Institute</li>
-                        <li>Loyola University Medical Center</li>
-                        <li>Department of Medicine, Division of Pulmonary and Critical Care</li>
-                    </ul>
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="partner-card">
+                        <h5>Clinical Partners</h5>
+                        <ul class="list-unstyled">
+                            <li>Department of Surgery, Loyola University Chicago</li>
+                            <li>Burn and Shock Trauma Research Institute</li>
+                            <li>Loyola University Medical Center</li>
+                            <li>Department of Medicine, Division of Pulmonary and Critical Care</li>
+                        </ul>
+                    </div>
                 </div>
                 
-                <div class="col-md-4 text-center mb-4">
-                    <h5>Academic Collaborators</h5>
-                    <ul class="list-unstyled">
-                        <li>Northwestern University</li>
-                        <li>University of Chicago</li>
-                        <li>University of Texas</li>
-                        <li>National Institutes of Health</li>
-                        <li>Harvard Medical School</li>
-                    </ul>
+                <div class="col-md-4">
+                    <div class="partner-card">
+                        <h5>Academic Collaborators</h5>
+                        <ul class="list-unstyled">
+                            <li>Northwestern University</li>
+                            <li>University of Chicago</li>
+                            <li>University of Texas</li>
+                            <li>National Institutes of Health</li>
+                            <li>Harvard Medical School</li>
+                        </ul>
+                    </div>
                 </div>
                 
-                <div class="col-md-4 text-center mb-4">
-                    <h5>Industry Partners</h5>
-                    <ul class="list-unstyled">
-                        <li>Pharmaceutical Research Labs</li>
-                        <li>Biotechnology Companies</li>
-                        <li>Medical Device Manufacturers</li>
-                        <li>Computational Biology Firms</li>
-                    </ul>
+                <div class="col-md-4">
+                    <div class="partner-card">
+                        <h5>Industry Partners</h5>
+                        <ul class="list-unstyled">
+                            <li>Pharmaceutical Research Labs</li>
+                            <li>Biotechnology Companies</li>
+                            <li>Medical Device Manufacturers</li>
+                            <li>Computational Biology Firms</li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
     
     <!-- Funding Sources -->
-    <section class="py-5 bg-light">
+    <section class="py-5">
         <div class="container">
             <h2 class="section-title text-center">Funding Sources</h2>
             <div class="row justify-content-center">
-                <div class="col-lg-8 text-center">
+                <div class="col-lg-8 text-center mb-4">
                     <p>Our research is generously supported by grants from various funding agencies:</p>
-                    <div class="row mt-4">
-                        <div class="col-md-6 mb-4">
-                            <div class="card h-100 border-0 shadow-sm">
-                                <div class="card-body d-flex flex-column align-items-center">
-                                    <img src="logos/nih-logo.png" alt="NIH" class="img-fluid mb-3" style="max-height: 60px;">
-                                    <p class="text-muted">R01, R21 Grants</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-6 mb-4">
-                            <div class="card h-100 border-0 shadow-sm">
-                                <div class="card-body d-flex flex-column align-items-center">
-                                    <img src="logos/luc.png" alt="Loyola University Chicago" class="img-fluid mb-3" style="max-height: 60px;">
-                                    <p class="text-muted">Internal Research Awards</p>
-                                </div>
-                            </div>
-                        </div>
+                </div>
+            </div>
+            <div class="row g-4 justify-content-center">
+                <div class="col-md-5">
+                    <div class="funding-card">
+                        <img src="logos/nih-logo.png" alt="NIH" class="img-fluid mb-3" style="max-height: 70px;">
+                        <p class="fw-bold">National Institutes of Health</p>
+                        <p class="text-muted">R01, R21 Grants</p>
                     </div>
-                    <p class="mt-3">We are grateful for the continued support that makes our research possible.</p>
+                </div>
+                <div class="col-md-5">
+                    <div class="funding-card">
+                        <img src="logos/luc.png" alt="Loyola University Chicago" class="img-fluid mb-3" style="max-height: 70px;">
+                        <p class="fw-bold">Loyola University Chicago</p>
+                        <p class="text-muted">Internal Research Awards</p>
+                    </div>
+                </div>
+            </div>
+            <div class="row mt-4">
+                <div class="col-12 text-center">
+                    <p>We are grateful for the continued support that makes our research possible.</p>
                 </div>
             </div>
         </div>
@@ -846,8 +978,11 @@
                     </div>
                     <h5>Quick Links</h5>
                     <ul class="list-unstyled">
-                        <li><a href="research.html">Research</a></li>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="research-publications.html">Research & Publications</a></li>
                         <li><a href="team.html">Team</a></li>
+                        <li><a href="resources.html">Resources</a></li>
+                        <li><a href="join.html">Join Us</a></li>
                         <li><a href="contact.html">Contact</a></li>
                     </ul>
                 </div>
@@ -861,5 +996,37 @@
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Filter function for publications
+        document.addEventListener('DOMContentLoaded', function() {
+            const filterBtns = document.querySelectorAll('.filter-btn');
+            const publicationItems = document.querySelectorAll('.publication-item');
+            
+            // Add click event to filter buttons
+            filterBtns.forEach(btn => {
+                btn.addEventListener('click', function() {
+                    // Remove active class from all buttons
+                    filterBtns.forEach(b => b.classList.remove('active'));
+                    // Add active class to clicked button
+                    this.classList.add('active');
+                    
+                    // Get filter value
+                    const filterValue = this.getAttribute('data-filter');
+                    
+                    // Filter publications
+                    publicationItems.forEach(item => {
+                        if (filterValue === 'all' || item.getAttribute('data-year') === filterValue || item.getAttribute('data-type') === filterValue) {
+                            item.style.display = 'block';
+                        } else {
+                            item.style.display = 'none';
+                        }
+                    });
+                });
+            });
+            
+            // Initialize with "All" filter
+            document.querySelector('.filter-btn[data-filter="all"]').click();
+        });
+    </script>
 </body>
 </html>
