@@ -152,7 +152,7 @@
         }
         
         .team-info {
-            text-align: center;
+            text-align: left; /* Changed from center to left */
         }
         
         .team-info h4 {
@@ -172,6 +172,11 @@
             margin-bottom: 8px;
             font-size: 0.8rem;
             line-height: 1.3;
+            text-align: left; /* Explicitly set to left */
+        }
+        
+        .team-social {
+            text-align: center; /* Keep social icons centered */
         }
         
         .team-social a {
@@ -229,6 +234,7 @@
         
         .pi-bio {
             margin-bottom: 15px;
+            text-align: left; /* Ensure PI bio is also left-aligned */
         }
         
         .team-category {
@@ -505,6 +511,23 @@
                             </div>
                         </div>
                     </div>
+
+                    <div class="col-xl-2 col-lg-3 col-md-4 col-6">
+                        <div class="team-member">
+                            <div class="team-img">
+                                <img src="people-img/mubeen.jpg" alt="Muhammad Mubeen" class="img-fluid">
+                            </div>
+                            <div class="team-info">
+                                <h4>Muhammad Mubeen</h4>
+                                <p class="team-title">MS - Research in Computer and Systems Engineering</p>
+                                <p class="team-bio">Graduate student in Computer and Systems Engineering with focus on Biomedical Data Science. Specializes in applying computational methods to biological and medical problems through interdisciplinary research approaches.</p>
+                                <p><strong>Education:</strong> Technische Universität Ilmenau</p>
+                                <div class="team-social">
+                                    <a href="mailto:muhammad.mubeen@tu-ilmenau.de" title="Email"><i class="fas fa-envelope"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
 
@@ -620,52 +643,3 @@
                             <li>Research Technicians/Scholars</li>
                         </ul>
                         <p>If you are interested in joining our lab, please send your CV and a brief statement of research interests to:</p>
-                        <p><a href="mailto:hji@luc.edu">hji@luc.edu</a></p>
-                        <a href="join.html" class="btn btn-primary mt-3">Learn More</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="py-5 bg-white">
-        <div class="container">
-            <h2 class="section-title text-center">Lab Culture</h2>
-            <div class="row justify-content-center">
-                <div class="col-md-8 text-center">
-                    <p class="mb-4">At Ji Laboratory, we believe that collaboration and community are essential to scientific progress. Our team regularly comes together to share ideas, celebrate achievements, and build strong working relationships.</p>
-                    <div class="mb-4">
-                        <img src="people-img/team_outing.gif" alt="Ji Lab team members enjoying a meal together" class="img-fluid rounded shadow">
-                    </div>
-                    <p class="text-muted">The Ji Lab team enjoying one of our regular social gatherings.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="py-5">
-        <div class="container">
-            <h2 class="section-title text-center">Our Affiliations</h2>
-            <div class="row justify-content-center align-items-center">
-                <div class="col-md-3 col-6 text-center mb-4">
-                    <img src="logos/stritch-logo.JPG" alt="Stritch School of Medicine" class="img-fluid" style="max-height: 80px;">
-                </div>
-                <div class="col-md-3 col-6 text-center mb-4">
-                    <img src="logos/nih-logo.png" alt="National Institutes of Health" class="img-fluid" style="max-height: 80px;">
-                </div>
-                <div class="col-md-3 col-6 text-center mb-4">
-                    <img src="logos/harvard.webp" alt="Harvard University" class="img-fluid" style="max-height: 80px;">
-                </div>
-                <div class="col-md-3 col-6 text-center mb-4">
-                    <img src="logos/nothwestern-logo.jpg" alt="Northwestern University" class="img-fluid" style="max-height: 80px;">
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer>
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-4">
-                    <h5>Ji Laboratory</h5
