@@ -17,7 +17,7 @@
         
         body {
             font-family: 'Open Sans', sans-serif;
-            line-height: 1.6;
+            line-height: 1.4;
         }
         
         .navbar {
@@ -50,7 +50,7 @@
             background-size: cover;
             background-position: center;
             color: white;
-            padding: 80px 0;
+            padding: 60px 0;
             margin-bottom: 0;
         }
         
@@ -66,8 +66,8 @@
         
         .section-title {
             position: relative;
-            margin-bottom: 40px;
-            padding-bottom: 15px;
+            margin-bottom: 30px;
+            padding-bottom: 10px;
             font-weight: 700;
             color: var(--secondary);
         }
@@ -121,16 +121,18 @@
             transform: translateY(-3px);
         }
         
+        /* Compact team member styles */
         .team-member {
-            margin-bottom: 50px;
+            margin-bottom: 20px;
+            padding: 10px;
         }
         
         .team-img {
             position: relative;
             overflow: hidden;
             border-radius: 5px;
-            margin-bottom: 20px;
-            height: 300px; /* Fixed height for consistent team image containers */
+            margin-bottom: 10px;
+            height: 180px; /* Reduced height */
             display: flex;
             align-items: center;
             justify-content: center;
@@ -138,10 +140,10 @@
         
         .team-img img {
             max-width: 100%;
-            max-height: 300px; /* Maximum height */
+            max-height: 180px;
             width: auto;
             height: auto;
-            object-fit: contain; /* Maintain aspect ratio without cropping */
+            object-fit: contain;
             transition: all 0.5s ease;
         }
         
@@ -154,31 +156,36 @@
         }
         
         .team-info h4 {
-            margin-bottom: 5px;
+            margin-bottom: 3px;
             color: var(--secondary);
+            font-size: 1rem;
         }
         
         .team-title {
             color: var(--primary);
             font-weight: 600;
-            margin-bottom: 15px;
+            margin-bottom: 8px;
+            font-size: 0.85rem;
         }
         
         .team-bio {
-            margin-bottom: 15px;
+            margin-bottom: 8px;
+            font-size: 0.8rem;
+            line-height: 1.3;
         }
         
         .team-social a {
             display: inline-block;
-            width: 32px;
-            height: 32px;
+            width: 24px;
+            height: 24px;
             background-color: #f5f5f5;
             border-radius: 50%;
             text-align: center;
-            line-height: 32px;
-            margin: 0 5px;
+            line-height: 24px;
+            margin: 0 2px;
             color: var(--secondary);
             transition: all 0.3s ease;
+            font-size: 0.7rem;
         }
         
         .team-social a:hover {
@@ -186,15 +193,16 @@
             color: white;
         }
         
+        /* Principal investigator styles - keep larger */
         .principal-investigator {
-            margin-bottom: 70px;
+            margin-bottom: 50px;
         }
         
         .pi-img {
             border-radius: 5px;
             overflow: hidden;
             box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-            height: 400px; /* Height for PI image container */
+            height: 350px;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -202,7 +210,7 @@
         
         .pi-img img {
             max-width: 100%;
-            max-height: 400px;
+            max-height: 350px;
             width: auto;
             height: auto;
             object-fit: contain;
@@ -216,29 +224,29 @@
         .pi-title {
             color: var(--primary);
             font-weight: 600;
-            margin-bottom: 20px;
+            margin-bottom: 15px;
         }
         
         .pi-bio {
-            margin-bottom: 20px;
+            margin-bottom: 15px;
         }
         
         .team-category {
-            margin-bottom: 50px;
+            margin-bottom: 30px;
         }
         
         .team-category-title {
             font-weight: 700;
             color: var(--secondary);
-            padding-bottom: 10px;
+            padding-bottom: 8px;
             border-bottom: 1px solid #eee;
-            margin-bottom: 30px;
+            margin-bottom: 20px;
         }
         
         .alumni-item {
-            padding: 15px;
+            padding: 10px;
             border-left: 3px solid var(--primary);
-            margin-bottom: 15px;
+            margin-bottom: 10px;
             transition: all 0.3s ease;
             background-color: white;
             box-shadow: 0 2px 5px rgba(0,0,0,0.05);
@@ -252,31 +260,55 @@
         .alumni-name {
             font-weight: 600;
             color: var(--secondary);
-            margin-bottom: 5px;
+            margin-bottom: 3px;
+            font-size: 0.95rem;
         }
         
         .alumni-position {
             color: var(--primary);
             font-style: italic;
-            margin-bottom: 5px;
+            margin-bottom: 3px;
+            font-size: 0.85rem;
         }
         
         .alumni-years {
-            font-size: 0.9rem;
+            font-size: 0.8rem;
             color: #6c757d;
         }
         
         .join-box {
-            padding: 30px;
+            padding: 20px;
             border-radius: 5px;
             background-color: #f8f9fa;
             box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-            margin-bottom: 30px;
+            margin-bottom: 20px;
         }
         
         .join-box h4 {
             color: var(--secondary);
-            margin-bottom: 20px;
+            margin-bottom: 15px;
+        }
+        
+        /* Responsive adjustments */
+        @media (max-width: 1200px) {
+            .team-member {
+                margin-bottom: 15px;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .team-img {
+                height: 150px;
+            }
+            .team-img img {
+                max-height: 150px;
+            }
+        }
+        
+        /* Sections padding reduction */
+        .py-5 {
+            padding-top: 2rem !important;
+            padding-bottom: 2rem !important;
         }
     </style>
 </head>
@@ -377,21 +409,9 @@
                     </div>
                 </div>
                 <div class="col-lg-8 pi-info">
-                    <h3>
-                        Ningshan Li</h3>
+                    <h3>Ningshan Li</h3>
                     <p class="pi-title">Research Assistant Professor</p>
                     <p class="pi-bio">Li's academic background and research interests lie at the intersection of data science and biomedicine, with a focus on developing novel algorithms and tools to leverage heterogeneous biomedical data to address complex biological and clinical challenges, ultimately improving patient care and clinical practice.</p>
-                    <!-- <div class="mb-4">
-                        <p><strong>Education:</strong></p>
-                        <ul>
-                            <li>MD, Xinxiang Medical University</li>
-                            <li>PhD, Molecular Medicine, University of Kent</li>
-                            <li>Postdoctoral Fellowship, University of Alabama at Birmingham</li>
-                        </ul>
-                    </div> -->
-                    <!-- <div class="mb-4">
-                        <p><strong>Hobbies:</strong> Gardening, Hiking, Travel, Photography, Exercise, Tumbling</p>
-                    </div> -->
                     <div class="team-social">
                         <a href="mailto:ningshan.li@yale.edu" title="Email"><i class="fas fa-envelope"></i></a>
                         <a href="https://nam12.safelinks.protection.outlook.com/?url=https%3A%2F%2Fscholar.google.com%2Fcitations%3Fuser%3DDwM0rLkAAAAJ%26hl%3Den%26oi%3Dao&data=05%7C02%7Cmarslan%40luc.edu%7C6b5f9fdfaf9744bb271008dd7bb7bf6c%7C021f4fe32b9c48248378bbcf9ec5accb%7C0%7C0%7C638802751367818254%7CUnknown%7CTWFpbGZsb3d8eyJFbXB0eU1hcGkiOnRydWUsIlYiOiIwLjAuMDAwMCIsIlAiOiJXaW4zMiIsIkFOIjoiTWFpbCIsIldUIjoyfQ%3D%3D%7C0%7C%7C%7C&sdata=AEfgklTZyAL08Hq50pK6yqriKkset0uh1DNZdpWrmgo%3D&reserved=0" target="_blank" title="Google Scholar"><i class="fas fa-graduation-cap"></i></a>
@@ -403,9 +423,7 @@
         </div>
     </section>
 
-    <!-- Post-Doctoral Fellows commented out section kept as is -->
-    
-    <!-- Graduate Students & Medical Students -->
+    <!-- Research Team -->
     <section class="py-5 bg-light">
         <div class="container">
             <h2 class="section-title text-center">Research Team</h2>
@@ -413,7 +431,7 @@
             <div class="team-category">
                 <h3 class="team-category-title">Graduate Students</h3>
                 <div class="row">
-                    <div class="col-md-6">
+                    <div class="col-xl-2 col-lg-3 col-md-4 col-6">
                         <div class="team-member">
                             <div class="team-img">
                                 <img src="people-img/arslan image.jpg" alt="Arslan Bisharat" class="img-fluid">
@@ -421,10 +439,8 @@
                             <div class="team-info">
                                 <h4>Arslan Bisharat</h4>
                                 <p class="team-title">PhD Student - Computer Science</p>
-                                <p class="team-bio">Arslan is a PhD student in Computer Science at Loyola University Chicago. He loves working on projects that bring together people from different fields and make a positive impact.
-                                    <br>
-                                    When he's not coding or reading research papers, you'll probably find him lost in a good book, hiking somewhere peaceful, or searching for the next great restaurant to try.</p>
-                                <p><strong>Education: </strong>Loyola University Chicago</p>
+                                <p class="team-bio">PhD student in Computer Science working on interdisciplinary projects with positive impact. Enjoys reading, hiking, and discovering great restaurants.</p>
+                                <p><strong>Education:</strong> Loyola University Chicago</p>
                                 <div class="team-social">
                                     <a href="mailto:marslan@luc.edu" title="Email"><i class="fas fa-envelope"></i></a>
                                     <a href="https://www.linkedin.com/in/arslanbisharat/" target="_blank" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
@@ -436,7 +452,7 @@
                         </div>
                     </div>
                     
-                    <div class="col-md-6">
+                    <div class="col-xl-2 col-lg-3 col-md-4 col-6">
                         <div class="team-member">
                             <div class="team-img">
                                 <img src="people-img/angelos.png" alt="Angelos Vasilopoulos" class="img-fluid">
@@ -444,8 +460,8 @@
                             <div class="team-info">
                                 <h4>Angelos Vasilopoulos</h4>
                                 <p class="team-title">MD - 3rd Year</p>
-                                <p class="team-bio">Angelos Vasilopoulos is a student at the Stritch School of Medicine. He graduated from Loyola University in 2023 with a degree in statistics. His research interests include machine learning for clinical decision-making and outcomes modeling, computational omics, and pharmacoeconomics.</p>
-                                <p><strong>Education: </strong>Loyola University Chicago</p>
+                                <p class="team-bio">Medical student at Stritch School of Medicine. Research interests include machine learning for clinical decision-making, computational omics, and pharmacoeconomics.</p>
+                                <p><strong>Education:</strong> Loyola University Chicago</p>
                                 <div class="team-social">
                                     <a href="mailto:avasilopoulos1@luc.edu" title="Email"><i class="fas fa-envelope"></i></a>
                                     <a href="https://www.linkedin.com/in/angelos-vasilopoulos-9a6144360/" target="_blank" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
@@ -454,19 +470,31 @@
                             </div>
                         </div>
                     </div>
-                </div>
-            </div>
-
-            <div class="col-md-6">
+                    
+                    <div class="col-xl-2 col-lg-3 col-md-4 col-6">
                         <div class="team-member">
-<!--                             <div class="team-img">
-                                <img src="people-img/arslan image.jpg" alt="Arslan Bisharat" class="img-fluid">
-                            </div> -->
+                            <div class="team-img">
+                                <img src="people-img/kathryn_cantrell.jpg" alt="Kathryn Cantrell" class="img-fluid">
+                            </div>
+                            <div class="team-info">
+                                <h4>Kathryn Cantrell</h4>
+                                <p class="team-title">MS Data Science Student</p>
+                                <p class="team-bio">Master of Data Science student with BS in Applied Mathematics. Research interests at the intersection of data science and computational biology for medical decision-making and predictive modeling.</p>
+                                <p><strong>Education:</strong> Loyola University Chicago</p>
+                                <div class="team-social">
+                                    <a href="https://www.linkedin.com/in/kathryngcantrell" target="_blank" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-xl-2 col-lg-3 col-md-4 col-6">
+                        <div class="team-member">
                             <div class="team-info">
                                 <h4>Rediat Tilahun</h4>
                                 <p class="team-title">MD - 1st Year</p>
-                                <p class="team-bio">Red is a student at the Stritch School of Medicine. She graduated from University of Minnesota-Rochester with Bachelor of Science - BS, Pre-Medicine/Pre-Medical Studies. 
-                                <p><strong>Education: </strong>Loyola University Chicago</p>
+                                <p class="team-bio">First-year medical student at Stritch School of Medicine. Graduated from University of Minnesota-Rochester with BS in Pre-Medicine.</p>
+                                <p><strong>Education:</strong> Loyola University Chicago</p>
                                 <div class="team-social">
                                     <a href="mailto:rtilahun@luc.edu" title="Email"><i class="fas fa-envelope"></i></a>
                                     <a href="https://www.linkedin.com/in/rediat-tilahun-289878185/" target="_blank" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
@@ -474,11 +502,13 @@
                             </div>
                         </div>
                     </div>
+                </div>
+            </div>
 
             <div class="team-category">
                 <h3 class="team-category-title">Summer Students</h3>
                 <div class="row">
-                    <div class="col-md-6">
+                    <div class="col-xl-2 col-lg-3 col-md-4 col-6">
                         <div class="team-member">
                             <div class="team-img">
                                 <img src="people-img/dee.jpg" alt="Dee Zhang" class="img-fluid">
@@ -486,8 +516,8 @@
                             <div class="team-info">
                                 <h4>Dee Zhang</h4>
                                 <p class="team-title">Summer Research Student</p>
-                                <p class="team-bio">Dee is a Computer Science undergraduate student participating in our summer research program, contributing to data analysis and computational projects in the lab.</p>
-                                <p><strong>Education: </strong>Computer Science, Rutgers University - New Brunswick, NJ (Bachelor's Degree anticipated: May 2028)</p>
+                                <p class="team-bio">Computer Science undergraduate participating in summer research program, contributing to data analysis and computational projects.</p>
+                                <p><strong>Education:</strong> Rutgers University - New Brunswick, NJ (Bachelor's anticipated: May 2028)</p>
                                 <div class="team-social">
                                     <a href="mailto:dzhang4538@scarletmail.rutgers.edu" title="Email"><i class="fas fa-envelope"></i></a>
                                 </div>
@@ -497,11 +527,33 @@
                 </div>
             </div>
 
-                        <!-- Alumni -->
+            <!-- Administrative Staff -->
+            <div class="team-category">
+                <h3 class="team-category-title">Administrative Staff</h3>
+                <div class="row">
+                    <div class="col-xl-2 col-lg-3 col-md-4 col-6">
+                        <div class="team-member">
+                            <div class="team-img">
+                                <img src="people-img/Zhao.jpg" alt="Runzhen Zhao" class="img-fluid">
+                            </div>
+                            <div class="team-info">
+                                <h4>Runzhen Zhao</h4>
+                                <p class="team-title">Lab Manager</p>
+                                <p><strong>Education:</strong> MD, PhD</p>
+                                <div class="team-social">
+                                    <a href="mailto:rzhao6@luc.edu" title="Email"><i class="fas fa-envelope"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Alumni -->
             <div class="team-category">
                 <h3 class="team-category-title">Alumni</h3>
                 <div class="row">
-                    <div class="col-lg-6">
+                    <div class="col-lg-4">
                         <div class="alumni-item">
                             <h5 class="alumni-name">Dr. Krishan G. Jain, Ph.D.</h5>
                             <p class="alumni-position">Postdoctoral Fellow / Research Assistant Professor</p>
@@ -510,7 +562,7 @@
                             <p><a href="mailto:kg_biotech@yahoo.com"><i class="fas fa-envelope me-2"></i>Email</a></p>
                         </div>
                     </div>
-                    <div class="col-lg-6">
+                    <div class="col-lg-4">
                         <div class="alumni-item">
                             <h5 class="alumni-name">Dr. Hongguang Nie, M.D, Ph.D.</h5>
                             <p class="alumni-position">Postdoctoral Fellow</p>
@@ -519,9 +571,7 @@
                             <p><a href="mailto:hgnie@cmu.edu.cn"><i class="fas fa-envelope me-2"></i>Email</a></p>
                         </div>
                     </div>
-                </div>
-                <div class="row">
-                    <div class="col-lg-6">
+                    <div class="col-lg-4">
                         <div class="alumni-item">
                             <h5 class="alumni-name">Deepa Bhattarai, M.S.</h5>
                             <p class="alumni-position">Graduate Assistant</p>
@@ -530,6 +580,8 @@
                             <p><a href="mailto:Deepa.Bhattarai@uth.tmc.edu"><i class="fas fa-envelope me-2"></i>Email</a></p>
                         </div>
                     </div>
+                </div>
+                <div class="row">
                     <div class="col-lg-6">
                         <div class="alumni-item">
                             <h5 class="alumni-name">Dr. Ali Gibran, Ph.D.</h5>
@@ -539,7 +591,6 @@
                             <p><a href="mailto:Ali.Gibran@mayo.edu"><i class="fas fa-envelope me-2"></i>Email</a></p>
                         </div>
                     </div>
-
                     <div class="col-lg-6">
                         <div class="alumni-item">
                             <h5 class="alumni-name">Dr. Mo Zhang, Ph.D.</h5>
@@ -547,28 +598,6 @@
                             <p class="alumni-years">1 years with Ji Lab</p>
                             <p>Currently lecturer at Xinxiang Medical University</p>
                             <p><a href="mailto:171004@xxmu.edu.cn"><i class="fas fa-envelope me-2"></i>Email</a></p>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-            <!-- Administrative Staff -->
-            <div class="team-category">
-                <h3 class="team-category-title">Administrative Staff</h3>
-                <div class="row">
-                    <div class="col-md-4">
-                        <div class="team-member">
-                            <div class="team-img">
-                                <img src="people-img/Zhao.jpg" alt="Runzhen Zhao" class="img-fluid">
-                            </div>
-                            <div class="team-info">
-                                <h4>Runzhen Zhao</h4>
-                                <p class="team-title">Lab Manager</p>
-                                <p><strong>Education:</strong> MD, PhD.</p>
-                                <div class="team-social">
-                                    <a href="mailto:rzhao6@luc.edu" title="Email"><i class="fas fa-envelope"></i></a>
-                                </div>
-                            </div>
                         </div>
                     </div>
                 </div>
@@ -611,26 +640,22 @@
         </div>
     </section>
 
-                <section class="py-5">
-                    <div class="container">
-                        <h2 class="section-title text-center">Our Affiliations</h2>
-                        <div class="row justify-content-center align-items-center">
-                            <div class="col-md-3 col-6 text-center mb-4">
-                                <img src="logos/stritch-logo.JPG" alt="Stritch School of Medicine" class="img-fluid" style="max-height: 80px;">
-                            </div>
-                            <div class="col-md-3 col-6 text-center mb-4">
-                                <img src="logos/nih-logo.png" alt="National Institutes of Health" class="img-fluid" style="max-height: 80px;">
-                            </div>
-                            <div class="col-md-3 col-6 text-center mb-4">
-                                <img src="logos/harvard.webp" alt="National Institutes of Health" class="img-fluid" style="max-height: 80px;">
-                            </div>
-                            <div class="col-md-3 col-6 text-center mb-4">
-                                <img src="logos/nothwestern-logo.jpg" alt="National Institutes of Health" class="img-fluid" style="max-height: 80px;">
-                            </div>
-                        </div>
-                    </div>
-                </section>
-                
+    <section class="py-5">
+        <div class="container">
+            <h2 class="section-title text-center">Our Affiliations</h2>
+            <div class="row justify-content-center align-items-center">
+                <div class="col-md-3 col-6 text-center mb-4">
+                    <img src="logos/stritch-logo.JPG" alt="Stritch School of Medicine" class="img-fluid" style="max-height: 80px;">
+                </div>
+                <div class="col-md-3 col-6 text-center mb-4">
+                    <img src="logos/nih-logo.png" alt="National Institutes of Health" class="img-fluid" style="max-height: 80px;">
+                </div>
+                <div class="col-md-3 col-6 text-center mb-4">
+                    <img src="logos/harvard.webp" alt="Harvard University" class="img-fluid" style="max-height: 80px;">
+                </div>
+                <div class="col-md-3 col-6 text-center mb-4">
+                    <img src="logos/nothwestern-logo.jpg" alt="Northwestern University" class="img-fluid" style="max-height: 80px;">
+                </div>
             </div>
         </div>
     </section>
@@ -640,40 +665,4 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-4">
-                    <h5>Ji Laboratory</h5>
-                    <p>Department of Surgery<br>
-                    Stritch School of Medicine<br>
-                    Loyola University Chicago</p>
-                    <p>Advancing pulmonary research through innovative approaches and cutting-edge technology.</p>
-                </div>
-                <div class="col-lg-4">
-                    <h5>Contact</h5>
-                            <p><i class="fas fa-envelope me-2"></i> <a href="mailto:hji@luc.edu">hji@luc.edu</a></p>
-                </div>
-                <div class="col-lg-4">
-                    <h5>Connect With Us</h5>
-                    <div class="social-icons mb-3">
-                        <a href="https://scholar.google.com/citations?view_op=list_works&hl=en&hl=en&user=WsQo5IoAAAAJ&sortby=pubdate" target="_blank" title="Google Scholar"><i class="fas fa-graduation-cap"></i></a>
-                        <a href="https://www.researchgate.net/profile/Hong-Long-Ji" target="_blank" title="ResearchGate"><i class="fab fa-researchgate"></i></a>
-                        <a href="https://www.linkedin.com/in/honglong-ji-78535391/" target="_blank" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-                    </div>
-                    <h5>Quick Links</h5>
-                    <ul class="list-unstyled">
-                        <li><a href="research-publications.html">Research & Publications</a></li>
-                        <li><a href="team.html">Team</a></li>
-                        <li><a href="resources.html">Resources</a></li>
-                        <li><a href="contact.html">Contact</a></li>
-                    </ul>
-                </div>
-            </div>
-            <div class="row mt-4">
-                <div class="col-12 text-center">
-                    <p class="small">&copy; 2025 Ji Laboratory, Loyola University Chicago. All Rights Reserved.</p>
-                </div>
-            </div>
-        </div>
-    </footer>
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
-</body>
-</html>
+                    <h5>Ji Laboratory</h5
