@@ -46,9 +46,7 @@
         }
         
         .page-header {
-            background: url('logos/team-cover.png');
-            background-size: cover;
-            background-position: center;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
             color: white;
             padding: 60px 0;
             margin-bottom: 0;
@@ -121,7 +119,7 @@
             transform: translateY(-3px);
         }
         
-        /* Compact team member styles */
+        /* FIXED: Uniform team member photo styles */
         .team-member {
             margin-bottom: 20px;
             padding: 10px;
@@ -130,35 +128,59 @@
         .team-img {
             position: relative;
             overflow: hidden;
-            border-radius: 5px;
+            border-radius: 8px;
             margin-bottom: 10px;
-            height: 180px; /* Reduced height */
-            display: flex;
-            align-items: center;
-            justify-content: center;
+            /* FIXED: Set exact dimensions for consistency */
+            width: 100%;
+            height: 200px;
+            background-color: #f8f9fa;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
         }
         
         .team-img img {
-            max-width: 100%;
-            max-height: 180px;
-            width: auto;
-            height: auto;
-            object-fit: contain;
-            transition: all 0.5s ease;
+            /* FIXED: Use object-fit cover for uniform sizing */
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center top; /* Focus on face area */
+            transition: all 0.3s ease;
         }
         
         .team-img:hover img {
             transform: scale(1.05);
         }
         
+        /* Alternative approach: If you prefer to maintain aspect ratio with uniform containers */
+        .team-img-contain {
+            position: relative;
+            overflow: hidden;
+            border-radius: 8px;
+            margin-bottom: 10px;
+            width: 100%;
+            height: 200px;
+            background-color: #f8f9fa;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        
+        .team-img-contain img {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
+            transition: all 0.3s ease;
+        }
+        
         .team-info {
-            text-align: left; /* Changed from center to left */
+            text-align: left;
         }
         
         .team-info h4 {
             margin-bottom: 3px;
             color: var(--secondary);
             font-size: 1rem;
+            font-weight: 600;
         }
         
         .team-title {
@@ -172,53 +194,52 @@
             margin-bottom: 8px;
             font-size: 0.8rem;
             line-height: 1.3;
-            text-align: left; /* Explicitly set to left */
+            text-align: left;
+            color: #666;
         }
         
         .team-social {
-            text-align: center; /* Keep social icons centered */
+            text-align: center;
         }
         
         .team-social a {
             display: inline-block;
-            width: 24px;
-            height: 24px;
+            width: 28px;
+            height: 28px;
             background-color: #f5f5f5;
             border-radius: 50%;
             text-align: center;
-            line-height: 24px;
-            margin: 0 2px;
+            line-height: 28px;
+            margin: 0 3px;
             color: var(--secondary);
             transition: all 0.3s ease;
-            font-size: 0.7rem;
+            font-size: 0.75rem;
         }
         
         .team-social a:hover {
             background-color: var(--primary);
             color: white;
+            transform: translateY(-2px);
         }
         
-        /* Principal investigator styles - keep larger */
+        /* Principal investigator styles - keep larger but also uniform */
         .principal-investigator {
             margin-bottom: 50px;
         }
         
         .pi-img {
-            border-radius: 5px;
+            border-radius: 8px;
             overflow: hidden;
             box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            width: 100%;
             height: 350px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
         }
         
         .pi-img img {
-            max-width: 100%;
-            max-height: 350px;
-            width: auto;
-            height: auto;
-            object-fit: contain;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center top;
         }
         
         .pi-info h3 {
@@ -234,7 +255,7 @@
         
         .pi-bio {
             margin-bottom: 15px;
-            text-align: left; /* Ensure PI bio is also left-aligned */
+            text-align: left;
         }
         
         .team-category {
@@ -245,49 +266,52 @@
             font-weight: 700;
             color: var(--secondary);
             padding-bottom: 8px;
-            border-bottom: 1px solid #eee;
+            border-bottom: 2px solid var(--primary);
             margin-bottom: 20px;
         }
         
         .alumni-item {
-            padding: 10px;
-            border-left: 3px solid var(--primary);
-            margin-bottom: 10px;
+            padding: 15px;
+            border-left: 4px solid var(--primary);
+            margin-bottom: 15px;
             transition: all 0.3s ease;
             background-color: white;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+            border-radius: 0 8px 8px 0;
         }
         
         .alumni-item:hover {
-            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
-            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transform: translateY(-2px);
         }
         
         .alumni-name {
             font-weight: 600;
             color: var(--secondary);
-            margin-bottom: 3px;
-            font-size: 0.95rem;
+            margin-bottom: 5px;
+            font-size: 1rem;
         }
         
         .alumni-position {
             color: var(--primary);
             font-style: italic;
-            margin-bottom: 3px;
-            font-size: 0.85rem;
+            margin-bottom: 5px;
+            font-size: 0.9rem;
         }
         
         .alumni-years {
-            font-size: 0.8rem;
+            font-size: 0.85rem;
             color: #6c757d;
+            margin-bottom: 8px;
         }
         
         .join-box {
-            padding: 20px;
-            border-radius: 5px;
-            background-color: #f8f9fa;
+            padding: 25px;
+            border-radius: 8px;
+            background: linear-gradient(135deg, #f8f9fa, #e9ecef);
             box-shadow: 0 5px 15px rgba(0,0,0,0.05);
             margin-bottom: 20px;
+            border: 1px solid #dee2e6;
         }
         
         .join-box h4 {
@@ -303,15 +327,22 @@
         }
         
         @media (max-width: 768px) {
-            .team-img {
-                height: 150px;
+            .team-img, .team-img-contain {
+                height: 180px;
             }
-            .team-img img {
-                max-height: 150px;
+            
+            .pi-img {
+                height: 300px;
             }
         }
         
-        /* Sections padding reduction */
+        @media (max-width: 576px) {
+            .team-img, .team-img-contain {
+                height: 160px;
+            }
+        }
+        
+        /* Sections padding */
         .py-5 {
             padding-top: 2rem !important;
             padding-bottom: 2rem !important;
@@ -334,7 +365,6 @@
                     <li class="nav-item">
                         <a class="nav-link" href="research.html">Research & Publications</a>
                     </li>
-                    
                     <li class="nav-item">
                         <a class="nav-link active" href="team.html">Team</a>
                     </li>
@@ -383,15 +413,11 @@
                     <div class="mb-4">
                         <p><strong>Research Interests:</strong></p>
                         <ul>
-                        <li>    AI-driven discovery of endotypes, biomarker, predictive models </li>  
-
-                           <li>   Lung injury and repair mechanisms in cohort </li>  
-                        
-                            <li>    Epithelial sodium channels (ENaC) in pulmonary edema </li>  
-                        
-                                <li>     Surfactant protein regulation of alveolar epithelial cell fate </li>  
-                        
-                                    <li>  Host-pathogen interactions in respiratory diseases </li>    
+                            <li>AI-driven discovery of endotypes, biomarker, predictive models</li>  
+                            <li>Lung injury and repair mechanisms in cohort</li>  
+                            <li>Epithelial sodium channels (ENaC) in pulmonary edema</li>  
+                            <li>Surfactant protein regulation of alveolar epithelial cell fate</li>  
+                            <li>Host-pathogen interactions in respiratory diseases</li>    
                         </ul>
                     </div>
                     <div class="mb-4">
@@ -420,12 +446,11 @@
                     <p class="pi-bio">Li's academic background and research interests lie at the intersection of data science and biomedicine, with a focus on developing novel algorithms and tools to leverage heterogeneous biomedical data to address complex biological and clinical challenges, ultimately improving patient care and clinical practice.</p>
                     <div class="team-social">
                         <a href="mailto:ningshan.li@yale.edu" title="Email"><i class="fas fa-envelope"></i></a>
-                        <a href="https://nam12.safelinks.protection.outlook.com/?url=https%3A%2F%2Fscholar.google.com%2Fcitations%3Fuser%3DDwM0rLkAAAAJ%26hl%3Den%26oi%3Dao&data=05%7C02%7Cmarslan%40luc.edu%7C6b5f9fdfaf9744bb271008dd7bb7bf6c%7C021f4fe32b9c48248378bbcf9ec5accb%7C0%7C0%7C638802751367818254%7CUnknown%7CTWFpbGZsb3d8eyJFbXB0eU1hcGkiOnRydWUsIlYiOiIwLjAuMDAwMCIsIlAiOiJXaW4zMiIsIkFOIjoiTWFpbCIsIldUIjoyfQ%3D%3D%7C0%7C%7C%7C&sdata=AEfgklTZyAL08Hq50pK6yqriKkset0uh1DNZdpWrmgo%3D&reserved=0" target="_blank" title="Google Scholar"><i class="fas fa-graduation-cap"></i></a>
+                        <a href="https://scholar.google.com/citations?user=DwM0rLkAAAAJ&hl=en&oi=ao" target="_blank" title="Google Scholar"><i class="fas fa-graduation-cap"></i></a>
                         <a href="https://orcid.org/0000-0003-1916-2563" target="_blank" title="ORCID"><i class="fab fa-orcid"></i></a>
                     </div>
                 </div>
             </div>
-
         </div>
     </section>
 
@@ -633,9 +658,9 @@
             
             <!-- Join Our Team box -->
             <div class="row">
-                <div class="col-lg-4 offset-lg-4">
+                <div class="col-lg-8 offset-lg-2">
                     <div class="join-box">
-                        <h4>Join Our Team</h4>
+                        <h4><i class="fas fa-users me-2"></i>Join Our Team</h4>
                         <p>We are always looking for talented and motivated individuals to join our research team. We currently have openings for:</p>
                         <ul>
                             <li>Assistant Professor</li>
@@ -644,4 +669,55 @@
                             <li>Undergraduate Research Assistants</li>
                             <li>Research Technicians/Scholars</li>
                         </ul>
-                        <p>If you are interested in joining our lab, please send your CV and a brief statement of research interests to:</p>
+                        <p>If you are interested in joining our lab, please send your CV and a brief statement of research interests to: <a href="mailto:hji@luc.edu">hji@luc.edu</a></p>
+                        <div class="text-center mt-3">
+                            <a href="contact.html" class="btn btn-primary">Contact Us</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4">
+                    <h5>Ji Laboratory</h5>
+                    <p>Loyola University Chicago<br>
+                    Stritch School of Medicine<br>
+                    Department of Surgery</p>
+                </div>
+                <div class="col-lg-4">
+                    <h5>Quick Links</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="research.html">Research & Publications</a></li>
+                        <li><a href="team.html">Team</a></li>
+                        <li><a href="resources.html">Resources</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-4">
+                    <h5>Connect With Us</h5>
+                    <div class="social-icons">
+                        <a href="mailto:hji@luc.edu" title="Email"><i class="fas fa-envelope"></i></a>
+                        <a href="https://scholar.google.com/citations?view_op=list_works&hl=en&hl=en&user=WsQo5IoAAAAJ&sortby=pubdate" target="_blank" title="Google Scholar"><i class="fas fa-graduation-cap"></i></a>
+                        <a href="https://www.researchgate.net/profile/Hong-Long-Ji" target="_blank" title="ResearchGate"><i class="fab fa-researchgate"></i></a>
+                        <a href="https://www.linkedin.com/in/honglong-ji-78535391/" target="_blank" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+            </div>
+            <hr class="my-4">
+            <div class="row">
+                <div class="col-12 text-center">
+                    <p>&copy; 2025 Ji Laboratory, Loyola University Chicago. All rights reserved.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
